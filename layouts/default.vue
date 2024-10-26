@@ -107,7 +107,7 @@
     </v-app-bar>
 
     <v-main>
-      <div style="max-width: 1400px; margin: auto" class="mb-15 px-3">
+      <div style="max-width: 1400px; margin: auto" class="mb-15">
         <NuxtPage />
       </div>
     </v-main>

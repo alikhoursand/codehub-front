@@ -82,12 +82,14 @@
       <SectionTitle :title="'همه سوالات'" :size="'h6'" :icon="'mdi-chat-question'" />
 
       <v-row class="ma-0 justify-space-between align-center">
-        <v-col cols="12" md="9">
-          <div class="mr-5">
-            <span style="font-size: 1.15rem">جستجو بر اساس دسته بندی پرسش ها</span>
+        <v-col cols="12" md="6">
+          <div class="">
+            <span class="text-sm-body-1 text-body-2 text-right">
+              جستجو بر اساس دسته بندی پرسش ها
+            </span>
           </div>
         </v-col>
-        <v-col cols="12" md="3">
+        <v-col cols="12" md="6">
           <div class="text-left">
             <v-btn
               size="x-large"

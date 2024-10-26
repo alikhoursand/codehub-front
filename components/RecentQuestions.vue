@@ -13,7 +13,7 @@
     </div>
     <v-row class="ma-0 mt-5">
       <v-col cols="12" lg="6" v-for="r in 4" :key="r">
-        <v-card rounded="lg" elevation="0" class="pa-5">
+        <v-card rounded="lg" elevation="0" class="pa-3 pa-md-5">
           <template v-slot:title>
             <div class="d-flex justify-space-between align-center">
               <div class="d-flex align-center">
