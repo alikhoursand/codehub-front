@@ -112,7 +112,7 @@
       </div>
     </v-main>
 
-    <v-footer class="border-t mt-0 pa-5 pa-md-15">
+    <v-footer class="mt-0 pa-5 pa-md-15">
       <v-row class="ma-0 mx-auto justify-space-between" style="max-width: 1400px">
         <v-col cols="12" md="4">
           <div class="">
