@@ -114,24 +114,29 @@
 
     <v-footer class="mt-0 pa-5 pa-md-15">
       <v-row class="ma-0 mx-auto justify-space-between" style="max-width: 1400px">
-        <v-col cols="12" md="4">
+        <v-col cols="12" md="3">
           <div class="">
-            <span class="text-h5 text-sm-h4 font-weight-bold text-light-blue-lighten-2">
+            <span class="text-h4 font-weight-bold text-light-blue-lighten-2">
               <span>کد هاب</span>
             </span>
           </div>
           <div class="mt-10 text-h6 font-weight-light">
             <span>ما را در شبکه های اجتماعی دنبال کنید.</span>
           </div>
+          <div class="mt-5 d-flex justify-space-between align-center">
+            <v-icon size="large" icon="mdi-instagram"></v-icon>
+            <v-icon size="large" icon="mdi-facebook"></v-icon>
+            <v-icon size="large" icon="mdi-twitter"></v-icon>
+          </div>
         </v-col>
-        <v-col cols="12" md="4" class="text-h6">
+        <v-col cols="12" md="3" class="text-h6 mt-10 mt-sm-0">
           <div class="text-h5 font-weight-normal text-white">ارتباط با ما</div>
           <div class="text-h6 mt-4 font-weight-light">تماس با ما</div>
           <div class="text-h6 mt-3 font-weight-light">پیشنهاد و انتقاد</div>
           <div class="text-h6 mt-3 font-weight-light">سوالات متداول</div>
           <div class="text-h6 mt-3 font-weight-light">وبلاگ</div>
         </v-col>
-        <v-col cols="12" md="4" class="text-h6">
+        <v-col cols="12" md="4" class="text-h6 mt-10 mt-sm-0">
           <div class="text-h5 font-weight-normal text-white">عضویت در خبرنامه</div>
           <div class="text-h6 mt-4 font-weight-light">از جدیدترین مقالات باخبر شوید.</div>
           <div class="mt-3">
