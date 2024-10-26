@@ -17,26 +17,52 @@
           <template v-slot:title>
             <div class="d-flex justify-space-between align-center">
               <div class="d-flex align-center">
-                <div>
-                  <!-- <v-img src="https://bad.src/not/valid">
-              <template v-slot:placeholder> -->
-                  <div
-                    style="width: 70px; height: 70px"
-                    class="rounded-circle bg-grey-lighten-2"
-                  ></div>
-                  <!-- </template>
-            </v-img> -->
-                </div>
-                <div
-                  class="mr-4"
-                  style="width: 200px; word-break: break-all; white-space: normal"
-                >
-                  <span class="font-weight-light" style="font-size: 1.4rem"
-                    >پریا سهیلی
-                  </span>
+                <div class="">
+                  <div class="d-flex align-center">
+                    <div>
+                      <v-avatar image="https://picsum.photos/250/300?image=114" size="65">
+                      </v-avatar>
+                    </div>
+                    <div
+                      class="mr-4"
+                      style="width: 200px; word-break: break-all; white-space: normal"
+                    >
+                      <span class="font-weight-light" style="font-size: 1.4rem">
+                        پریا سهیلی
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-sm-none mt-4 d-flex align-center">
+                      <div>
+                        <span class="font-weight-light text-body-1">2 ساعت پیش</span>
+                      </div>
+                      <div>
+                        <v-btn
+                          flat
+                          color="#1e2124"
+                          class="text-light-blue-lighten-2 mr-2"
+                          rounded="lg"
+                          height="35"
+                          text="160"
+                          prepend-icon="mdi-eye"
+                        ></v-btn>
+
+                        <v-btn
+                          flat
+                          color="#1e2124"
+                          class="text-light-blue-lighten-2 mr-2"
+                          rounded="lg"
+                          size="small"
+                          height="35"
+                          icon="mdi-bookmark-multiple"
+                        ></v-btn>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="d-flex align-center">
+              <div class="d-sm-flex d-none align-center">
                 <div>
                   <span class="font-weight-light text-body-1">2 ساعت پیش</span>
                 </div>
