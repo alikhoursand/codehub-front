@@ -17,7 +17,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar scroll-behavior="elevate" height="150" class="top-menu">
+    <v-app-bar scroll-behavior="elevate" height="100" class="top-menu">
       <v-row class="justify-space-between align-center ma-0 mx-auto" style="max-width: 1400px">
         <v-col cols="2" class="d-block d-md-none text-right">
           <v-icon icon="mdi-menu" size="large" @click="showSideBar = true"></v-icon>
@@ -50,11 +50,11 @@
           </NuxtLink>
         </v-col>
 
-        <v-col cols="12" md="12" class="d-block d-md-none pt-0">
+        <!-- <v-col cols="12" md="12" class="d-block d-md-none pt-0">
           <v-text-field hide-details clearable class="search-bar" density="comfortable" prepend-inner-icon="mdi-magnify"
             label="جستجو..." variant="solo-filled" flat v-model="searchQuery">
           </v-text-field>
-        </v-col>
+        </v-col> -->
       </v-row>
     </v-app-bar>
 

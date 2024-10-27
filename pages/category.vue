@@ -12,7 +12,7 @@
             label="جستجو در پرسش ها" variant="solo" flat v-model="searchQuery">
           </v-text-field>
         </v-col>
-        <v-col cols="12" md="6" class="text-left">
+        <v-col cols="12" md="6" class="text-left buttons">
           <div class="d-none d-md-block">
             <v-menu location="bottom" transition="slide-y-transition">
               <template v-slot:activator="{ props }">
@@ -234,6 +234,10 @@ function x() {
 }
 
 .reply-btn {
+  border-radius: var(--border-radius-md) !important;
+}
+
+.buttons .v-btn {
   border-radius: var(--border-radius-md) !important;
 }
 
