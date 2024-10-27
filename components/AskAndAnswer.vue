@@ -38,7 +38,7 @@
           <v-menu location="bottom" transition="slide-y-transition">
             <template v-slot:activator="{ props }">
 
-              <v-btn v-bind="props" text="مرتب سازی پرسش ها" class="font-weight-light sorting" size="large" rounded="lg"
+              <v-btn v-bind="props" text="مرتب سازی پرسش ها" class="font-weight-light sorting" size="large"
                 prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down" variant="text"></v-btn>
 
             </template>

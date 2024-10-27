@@ -1,25 +1,13 @@
 <template>
   <div>
     <div>
-      <swiper
-        :loop="true"
-        :autoplay="{
-          delay: 3500,
-          disableOnInteraction: false,
-        }"
-        :modules="modules"
-        class="mySwiper shadow-base"
-      >
+      <swiper :loop="true" :autoplay="{
+        delay: 3500,
+        disableOnInteraction: false,
+      }" :modules="modules" class="mySwiper shadow-base">
         <swiper-slide v-for="slide in 2">
-          <v-img
-            class=""
-            :aspect-ratio="16 / 9"
-            max-height="500"
-            height="100%"
-            :eager="true"
-            :src="'/images/hero.png'"
-            cover
-          ></v-img>
+          <v-img class="hero-img" :aspect-ratio="16 / 9" max-height="500" height="100%" :eager="true"
+            :src="'/images/hero.png'" cover></v-img>
         </swiper-slide>
       </swiper>
     </div>
@@ -29,7 +17,7 @@
 <style>
 .mySwiper {
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
 }
 
 .side-hero {
@@ -63,6 +51,6 @@ export default {
       modules: [Autoplay],
     };
   },
-  mounted() {},
+  mounted() { },
 };
 </script>

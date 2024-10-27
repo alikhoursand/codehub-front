@@ -34,12 +34,6 @@ body,
     line-height: 1.2 !important;
 }
 
-.mobile-filters .v-expansion-panels,
-.mobile-filters .v-expansion-panel,
-.addy .v-expansion-panels,
-.addy .v-expansion-panel {
-    border-radius: .5rem;
-}
 
 
 .ck-table-resized {
@@ -77,6 +71,11 @@ body,
     border-radius: 1rem !important;
 }
 
+.profile-container {
+    border-bottom-left-radius: var(--border-radius-md) !important;
+    border-bottom-right-radius: var(--border-radius-md) !important;
+    overflow: hidden;
+}
 
 .search-bar .v-field__append-inner {
     display: none;
