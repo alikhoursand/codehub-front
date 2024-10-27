@@ -3,6 +3,11 @@
 
 /* dark main bg = #1e2124 */
 /* dark surface bg 14161a */
+:root {
+    --border-radius-lg: 16px;
+    --border-radius-md: 12px;
+}
+
 
 body,
 .v-btn,
@@ -66,6 +71,10 @@ body,
 
 .shadow-hover {
     box-shadow: 0px 1px 10px #00000033 !important;
+}
+
+.round-base {
+    border-radius: 1rem !important;
 }
 
 

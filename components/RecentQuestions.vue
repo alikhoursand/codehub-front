@@ -3,17 +3,13 @@
     <div class="d-flex justify-space-between align-center">
       <SectionTitle :title="'سوالات اخیر'" :icon="'mdi-clock'" :size="'h6'" />
       <div>
-        <v-btn
-          text="مشاهده همه"
-          append-icon="mdi-chevron-left-box"
-          class="font-weight-light"
-          variant="plain"
-        ></v-btn>
+        <v-btn text="مشاهده همه" append-icon="mdi-chevron-left-box" class="font-weight-light" flat
+          variant="plain"></v-btn>
       </div>
     </div>
     <v-row class="ma-0 mt-5">
       <v-col cols="12" lg="6" v-for="r in 4" :key="r">
-        <v-card rounded="lg" elevation="0" class="pa-3 pa-md-5">
+        <v-card elevation="0" class="pa-0 pa-md-5 question-card">
           <template v-slot:title>
             <div class="d-flex justify-space-between align-center">
               <div class="d-flex align-center">
@@ -23,10 +19,7 @@
                       <v-avatar image="https://picsum.photos/250/300?image=114" size="65">
                       </v-avatar>
                     </div>
-                    <div
-                      class="mr-4"
-                      style="width: 200px; word-break: break-all; white-space: normal"
-                    >
+                    <div class="mr-4" style="width: 200px; word-break: break-all; white-space: normal">
                       <span class="font-weight-light" style="font-size: 1.4rem">
                         پریا سهیلی
                       </span>
@@ -35,28 +28,14 @@
                   <div>
                     <div class="d-sm-none mt-4 d-flex align-center">
                       <div>
-                        <span class="font-weight-light text-body-1">2 ساعت پیش</span>
+                        <span class="font-weight-light text-body-1 text-medium-emphasis">2 ساعت پیش</span>
                       </div>
                       <div>
-                        <v-btn
-                          flat
-                          color="#1e2124"
-                          class="text-light-blue-lighten-2 mr-2"
-                          rounded="lg"
-                          height="35"
-                          text="160"
-                          prepend-icon="mdi-eye"
-                        ></v-btn>
+                        <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2" rounded="lg" height="35"
+                          text="160" prepend-icon="mdi-eye"></v-btn>
 
-                        <v-btn
-                          flat
-                          color="#1e2124"
-                          class="text-light-blue-lighten-2 mr-2"
-                          rounded="lg"
-                          size="small"
-                          height="35"
-                          icon="mdi-bookmark-multiple"
-                        ></v-btn>
+                        <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2" rounded="lg" size="small"
+                          height="35" icon="mdi-bookmark-multiple"></v-btn>
                       </div>
                     </div>
                   </div>
@@ -64,28 +43,14 @@
               </div>
               <div class="d-sm-flex d-none align-center">
                 <div>
-                  <span class="font-weight-light text-body-1">2 ساعت پیش</span>
+                  <span class="font-weight-light text-body-1 text-medium-emphasis">2 ساعت پیش</span>
                 </div>
                 <div>
-                  <v-btn
-                    flat
-                    color="#1e2124"
-                    class="text-light-blue-lighten-2 mr-2"
-                    rounded="lg"
-                    height="35"
-                    text="160"
-                    prepend-icon="mdi-eye"
-                  ></v-btn>
+                  <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2" rounded="lg" height="35" text="160"
+                    prepend-icon="mdi-eye"></v-btn>
 
-                  <v-btn
-                    flat
-                    color="#1e2124"
-                    class="text-light-blue-lighten-2 mr-2"
-                    rounded="lg"
-                    size="small"
-                    height="35"
-                    icon="mdi-bookmark-multiple"
-                  ></v-btn>
+                  <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2" rounded="lg" size="small"
+                    height="35" icon="mdi-bookmark-multiple"></v-btn>
                 </div>
               </div>
             </div>
@@ -113,42 +78,17 @@
               <div class="chip ml-3 px-3 py-2 border rounded-pill">#طراحی_وب</div>
               <div class="chip ml-3 px-3 py-2 border rounded-pill">#فرانت_اند</div>
             </div>
-            <div class="mt-5 d-flex justify-end">
-              <v-btn
-                flat
-                color="#1e2124"
-                class="text-light-blue-lighten-2"
-                rounded="lg"
-                height="35"
-                text="4"
-                prepend-icon="mdi-forum"
-              ></v-btn>
+            <div class="mt-8 d-flex justify-end">
+              <v-btn flat color="#1e2124" class="text-light-blue-lighten-2" rounded="lg" height="35" text="4"
+                prepend-icon="mdi-forum"></v-btn>
 
               <div class="d-flex align-center">
-                <v-img
-                  class="av-img"
-                  rounded="circle"
-                  height="35"
-                  cover
-                  width="35"
-                  src="https://picsum.photos/250/300?image=100"
-                ></v-img>
-                <v-img
-                  class="av-img"
-                  rounded="circle"
-                  height="35"
-                  cover
-                  width="35"
-                  src="https://picsum.photos/250/300?image=102"
-                ></v-img>
-                <v-img
-                  class="av-img"
-                  rounded="circle"
-                  height="35"
-                  cover
-                  width="35"
-                  src="https://picsum.photos/250/300?image=104"
-                ></v-img>
+                <v-img class="av-img" rounded="circle" height="35" cover width="35"
+                  src="https://picsum.photos/250/300?image=100"></v-img>
+                <v-img class="av-img" rounded="circle" height="35" cover width="35"
+                  src="https://picsum.photos/250/300?image=102"></v-img>
+                <v-img class="av-img" rounded="circle" height="35" cover width="35"
+                  src="https://picsum.photos/250/300?image=104"></v-img>
               </div>
             </div>
           </template>
@@ -167,12 +107,13 @@ import SectionTitle from "./SectionTitle.vue";
   display: inline-block;
   border: 1px solid #ddd;
 }
+
 .parag {
   height: 100px;
   line-height: 1.6rem;
   text-align: justify;
   overflow: hidden;
-  word-break: break-all;
+  word-break: normal;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
@@ -184,9 +125,14 @@ import SectionTitle from "./SectionTitle.vue";
   left: -30px;
   z-index: 5;
 }
+
 .av-img:nth-child(2) {
   position: relative;
   left: -15px;
   z-index: 4;
+}
+
+.question-card {
+  border-radius: var(--border-radius-md);
 }
 </style>

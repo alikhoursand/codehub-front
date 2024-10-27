@@ -1,0 +1,297 @@
+<template>
+  <div>
+    <AskAndAnswer class="mt-15" :showTitle="false" />
+
+    <div class="mt-15 pr-3">
+      <span class="text-h4 font-weight-light">وردپرس</span>
+    </div>
+    <div>
+      <v-row class="ma-0 mt-10 align-center">
+        <v-col cols="12" md="6" class="search">
+          <v-text-field hide-details clearable class="search-bar " prepend-inner-icon="mdi-magnify"
+            label="جستجو در پرسش ها" variant="solo" flat v-model="searchQuery">
+          </v-text-field>
+        </v-col>
+        <v-col cols="12" md="6" class="text-left">
+          <div class="d-none d-md-block">
+            <v-menu location="bottom" transition="slide-y-transition">
+              <template v-slot:activator="{ props }">
+
+                <v-btn v-bind="props" text="مرتب سازی پرسش ها" class="font-weight-light sorting" size="x-large"
+                  rounded="lg" prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down" variant="flat"></v-btn>
+
+              </template>
+
+              <v-list class="drop-list">
+                <v-list-item @click="x()">
+                  <v-list-item-title>هفته گذشته</v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="x()">
+                  <v-list-item-title>جدید ترین</v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="x()">
+                  <v-list-item-title>محبوب ترین ها</v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="x()">
+                  <v-list-item-title>قدیمی ترین</v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="x()">
+                  <v-list-item-title>ماه گذشته</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+
+            <v-btn size="x-large" rounded="lg" color="light-blue-lighten-2 mr-2" append-icon="mdi-plus-box"
+              class="font-weight-light" text="ثبت پرسش"></v-btn>
+
+          </div>
+          <div class="d-block d-md-none">
+
+
+            <v-btn block size="x-large" rounded="lg" color="light-blue-lighten-2" append-icon="mdi-plus-box"
+              class="font-weight-light" text="ثبت پرسش"></v-btn>
+
+
+            <v-menu location="bottom" transition="slide-y-transition">
+              <template v-slot:activator="{ props }">
+                <v-btn v-bind="props" block text="مرتب سازی پرسش ها" class="font-weight-light sorting  mt-3"
+                  size="x-large" rounded="lg" prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down"
+                  variant="flat"></v-btn>
+              </template>
+
+              <v-list class="drop-list">
+                <v-list-item @click="x()">
+                  <v-list-item-title>هفته گذشته</v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="x()">
+                  <v-list-item-title>جدید ترین</v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="x()">
+                  <v-list-item-title>محبوب ترین ها</v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="x()">
+                  <v-list-item-title>قدیمی ترین</v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="x()">
+                  <v-list-item-title>ماه گذشته</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+
+          </div>
+
+
+        </v-col>
+
+      </v-row>
+    </div>
+
+    <div>
+      <v-row class="ma-0 mt-5">
+        <v-col cols="12" lg="3" class="d-none d-lg-block">
+          <v-sheet class="px-4 py-6 sidebar">
+            <v-btn block size="x-large" rounded="lg" color="light-blue-lighten-2" append-icon="mdi-plus-box"
+              class="font-weight-light" text="ثبت پرسش"></v-btn>
+            <div class="mt-8">
+              <span class="text-h6">دسته بندی پرسش ها</span>
+            </div>
+            <div>
+              <v-list lines="one">
+                <v-list-item title="وردپرس"></v-list-item>
+                <v-list-item title="بوت استرپ"></v-list-item>
+                <v-list-item title="لاراول"></v-list-item>
+                <v-list-item title="ری اکت"></v-list-item>
+                <v-list-item title="جنگو"></v-list-item>
+                <v-list-item title="HTML"></v-list-item>
+                <v-list-item title="ویو"></v-list-item>
+              </v-list>
+            </div>
+            <v-btn text="موارد بیشتر" variant="plain" style="opacity: 1;" :ripple="false" color="light-blue-lighten-2"
+              append-icon="mdi-menu-down"></v-btn>
+          </v-sheet>
+        </v-col>
+        <v-col cols="12" lg="9">
+          <v-card v-for="q in 5" :key="q" elevation="0" class="pa-0 pa-md-5 question-card">
+            <template v-slot:title>
+              <div class="d-flex justify-space-between align-center">
+                <div class="d-flex align-center">
+                  <div class="">
+                    <div class="d-flex align-center">
+                      <div>
+                        <v-avatar image="https://picsum.photos/250/300?image=114" size="65">
+                        </v-avatar>
+                      </div>
+                      <div class="mr-4" style="width: 200px; word-break: break-all; white-space: normal">
+                        <span class="font-weight-light" style="font-size: 1.4rem">
+                          پریا سهیلی
+                        </span>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="d-sm-none mt-4 d-flex align-center">
+                        <div>
+                          <span class="font-weight-light text-body-1 text-medium-emphasis">2 ساعت پیش</span>
+                        </div>
+                        <div>
+                          <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2" rounded="lg" height="35"
+                            text="160" prepend-icon="mdi-eye"></v-btn>
+
+                          <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2" rounded="lg" size="small"
+                            height="35" icon="mdi-bookmark-multiple"></v-btn>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-sm-flex d-none align-center">
+                  <div>
+                    <span class="font-weight-light text-body-1 text-medium-emphasis">2 ساعت پیش</span>
+                  </div>
+                  <div>
+                    <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2" rounded="lg" height="35"
+                      text="160" prepend-icon="mdi-eye"></v-btn>
+
+                    <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2" rounded="lg" size="small"
+                      height="35" icon="mdi-bookmark-multiple"></v-btn>
+                  </div>
+                </div>
+              </div>
+            </template>
+            <template v-slot:text>
+              <div class="mt-3"><span style="font-size: 1.25rem">عنوان پرسش</span></div>
+              <div class="mt-5">
+                <p class="text-body-1 parag" v-if="q == 2">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                  طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                  که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف
+                  بهبود ابزارهای کاربردی می باشدلورم ایپسوم متن ساختگی با تولید سادگی
+                  نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه
+                  روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
+                  مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+                </p>
+                <p class="text-body-1 parag" v-else>
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                  طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                  که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف
+                  بهبود ابزارهای کاربردی می باشد
+                </p>
+              </div>
+              <div class="mt-5">
+                <div class="chip ml-3 px-3 py-2 border rounded-pill">#طراحی_وب</div>
+                <div class="chip ml-3 px-3 py-2 border rounded-pill">#فرانت_اند</div>
+              </div>
+              <div class="mt-8 d-flex justify-space-between  align-center">
+                <div class="d-block d-sm-none"></div>
+                <div class="d-flex align-center">
+                  <v-btn flat color="#1e2124" class="text-light-blue-lighten-2" rounded="lg" height="35" text="4"
+                    prepend-icon="mdi-forum"></v-btn>
+
+                  <div class="d-flex align-center">
+                    <v-img class="av-img" rounded="circle" height="35" cover width="35"
+                      src="https://picsum.photos/250/300?image=100"></v-img>
+                    <v-img class="av-img" rounded="circle" height="35" cover width="35"
+                      src="https://picsum.photos/250/300?image=102"></v-img>
+                    <v-img class="av-img" rounded="circle" height="35" cover width="35"
+                      src="https://picsum.photos/250/300?image=104"></v-img>
+                  </div>
+                </div>
+                <div class="d-none d-sm-block">
+                  <v-btn text="پاسخ" class="reply-btn" size="large" variant="outlined" append-icon="mdi-reply"
+                    color="light-blue-lighten-2"></v-btn>
+                </div>
+
+              </div>
+              <v-btn text="پاسخ" class="reply-btn mt-8 d-flex d-sm-none" block size="x-large" variant="outlined"
+                append-icon="mdi-reply" color="light-blue-lighten-2"></v-btn>
+            </template>
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import AskAndAnswer from '~/components/AskAndAnswer.vue';
+
+let searchQuery = ref(null)
+
+function x() {
+  console.log('x');
+
+}
+</script>
+
+<style>
+.sorting {
+  background-color: #14161e;
+  color: #FFFFFFDE;
+}
+
+.chip {
+  display: inline-block;
+  border: 1px solid #ddd;
+}
+
+.reply-btn {
+  border-radius: var(--border-radius-md) !important;
+}
+
+.parag {
+  height: 100px;
+  line-height: 1.6rem;
+  text-align: justify;
+  overflow: hidden;
+  word-break: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+
+.av-img:nth-child(1) {
+  position: relative;
+  left: -30px;
+  z-index: 5;
+}
+
+.av-img:nth-child(2) {
+  position: relative;
+  left: -15px;
+  z-index: 4;
+}
+
+.sidebar {
+  border-radius: var(--border-radius-md) !important;
+}
+
+.question-card {
+  border-radius: var(--border-radius-md) !important;
+
+}
+
+.question-card:nth-child(n+2) {
+  margin-top: 1rem;
+}
+
+.sidebar .v-btn {
+  border-radius: var(--border-radius-md) !important;
+}
+
+.sorting:hover {
+  background-color: #14161e;
+  color: #4fc3f7;
+
+}
+
+.search .v-field {
+  border-radius: var(--border-radius-md) !important;
+  background-color: #14161a;
+
+}
+
+.search .v-field--variant-solo-filled {
+  background-color: #14161a !important;
+  opacity: 1 !important;
+}
+</style>

@@ -1,34 +1,31 @@
 <template>
   <div>
     <SectionTitle :title="'10 کاربر برتر'" :icon="'mdi-seal'" :size="'h6'" />
-    <div class="mt-5">
-      <swiper
-        :slidesPerView="1"
-        :spaceBetween="10"
-        :breakpoints="{
-          '640': {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          '768': {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          '1024': {
-            slidesPerView: 4,
-            spaceBetween: 50,
-          },
-          '1600': {
-            slidesPerView: 5,
-            spaceBetween: 30,
-          },
-        }"
-        :navigation="true"
-        :modules="modules"
-        class="mySwiper pb-15"
-      >
+    <div class="mt-5 px-3">
+      <swiper :slidesPerView="2" :spaceBetween="10" :breakpoints="{
+        '0': {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        '640': {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        '768': {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        '1024': {
+          slidesPerView: 4,
+          spaceBetween: 50,
+        },
+        '1600': {
+          slidesPerView: 5,
+          spaceBetween: 30,
+        },
+      }" :navigation="true" :modules="modules" class="mySwiper pb-15">
         <swiper-slide v-for="u in 10">
-          <v-card class="pa-8" elevation="0" rounded="lg">
+          <v-card class="pa-8 round-base" elevation="0">
             <div class="d-flex justify-center align-center">
               <div>
                 <!-- <v-img
@@ -39,10 +36,7 @@
                   width="35"
                   src="https://picsum.photos/250/300?image=104"
                 ></v-img> -->
-                <v-avatar
-                  image="https://picsum.photos/250/300?image=114"
-                  size="80"
-                ></v-avatar>
+                <v-avatar image="https://picsum.photos/250/300?image=114" size="80"></v-avatar>
               </div>
               <div class="mr-5">
                 <div>کاربر تستی</div>
@@ -68,10 +62,11 @@ let modules = ref([Navigation]);
 
 <style>
 .swiper-button-next {
-  left: 0 !important;
+  left: 10px !important;
 }
+
 .swiper-button-prev {
-  right: 0 !important;
+  right: 10px !important;
 }
 
 .swiper-button-next,
@@ -84,6 +79,7 @@ let modules = ref([Navigation]);
   width: 20px;
   padding: 0.5rem;
 }
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 0.5rem;

@@ -20,6 +20,8 @@
     "vue-toastification": "^2.0.0-rc.5"
   },
   "devDependencies": {
+    "sass": "^1.80.4",
+    "sass-loader": "^16.0.2",
     "vite-plugin-vuetify": "^2.0.4",
     "vuetify": "^3.6.14"
   }

@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+// import vuetifySass from "@paro-paro/vite-plugin-vuetify-sass";
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -21,7 +22,14 @@ export default defineNuxtConfig({
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }))
+        config.plugins.push(vuetify({
+          autoImport: true,
+
+        }),
+          // vuetifySass({
+          //   configFile: "assets/variables.scss",
+          // })
+        )
       })
     },
     //...
@@ -40,5 +48,6 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+
   },
 })

@@ -7,10 +7,7 @@
         <NuxtLink to="/" class="">
           <v-list-item>
             <template v-slot:prepend>
-              <v-icon
-                :color="page == 'index' ? 'light-blue-lighten-2' : ''"
-                icon="mdi-home"
-              ></v-icon>
+              <v-icon :color="page == 'index' ? 'light-blue-lighten-2' : ''" icon="mdi-home"></v-icon>
             </template>
             <div :class="page == 'index' ? 'text-light-blue-lighten-2' : ''">
               صفحه اصلی
@@ -20,11 +17,8 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar scroll-behavior="elevate" height="150">
-      <v-row
-        class="justify-space-between align-center ma-0 mx-auto"
-        style="max-width: 1400px"
-      >
+    <v-app-bar scroll-behavior="elevate" height="150" class="top-menu">
+      <v-row class="justify-space-between align-center ma-0 mx-auto" style="max-width: 1400px">
         <v-col cols="2" class="d-block d-md-none text-right">
           <v-icon icon="mdi-menu" size="large" @click="showSideBar = true"></v-icon>
         </v-col>
@@ -38,81 +32,39 @@
         </v-col>
 
         <v-col cols="4" class="d-none d-md-block">
-          <v-autocomplete
-            hide-details
-            clearable
-            max-width="400px"
-            class="search-bar"
-            prepend-inner-icon="mdi-magnify"
-            label="جستجو در پرسش ها"
-            style="border-radius: 4rem !important"
-            rounded="lg"
-            return-object
-            variant="solo-filled"
-            flat
-            density="comfortable"
-            v-model="searchQuery"
-          >
-          </v-autocomplete>
+          <v-text-field hide-details clearable max-width="400px" class="search-bar" prepend-inner-icon="mdi-magnify"
+            label="جستجو در پرسش ها" variant="solo-filled" flat density="comfortable" v-model="searchQuery">
+          </v-text-field>
         </v-col>
 
         <v-col cols="5" md="6" class="text-left pa-0">
           <NuxtLink to="/" class="d-inline-block">
-            <v-icon
-              icon="mdi-bell"
-              class="ma-2 ml-5 d-block d-md-none"
-              color="light-blue-lighten-2"
-            ></v-icon>
-            <v-btn
-              prepend-icon="mdi-bell"
-              variant="text"
-              color="light-blue-lighten-2"
-              text="اعلان های من"
-              class="ma-2 d-none d-md-flex font-weight-light"
-              rounded="lg"
-              size="large"
-            ></v-btn>
+            <v-icon icon="mdi-bell" class="ma-2 ml-5 d-block d-md-none" color="light-blue-lighten-2"></v-icon>
+            <v-btn prepend-icon="mdi-bell" variant="text" color="light-blue-lighten-2" text="اعلان های من"
+              class="ma-2 d-none d-md-flex font-weight-light" size="large"></v-btn>
           </NuxtLink>
           <NuxtLink to="/" class="d-inline-block">
             <v-icon icon="mdi-account" class="ma-2 ml-3 d-block d-md-none"></v-icon>
-            <v-btn
-              variant="flat"
-              prepend-icon="mdi-login"
-              color="light-blue-lighten-2"
-              text="ورود / ثبت نام"
-              class="ma-2 d-none d-md-flex font-weight-light"
-              rounded="lg"
-              size="large"
-            ></v-btn>
+            <v-btn variant="flat" prepend-icon="mdi-login" color="light-blue-lighten-2" text="ورود / ثبت نام"
+              class="ma-2 d-none d-md-flex font-weight-light" rounded="lg" size="large"></v-btn>
           </NuxtLink>
         </v-col>
 
         <v-col cols="12" md="12" class="d-block d-md-none pt-0">
-          <v-autocomplete
-            hide-details
-            clearable
-            class="search-bar"
-            density="comfortable"
-            prepend-inner-icon="mdi-magnify"
-            label="جستجو..."
-            rounded="lg"
-            return-object
-            variant="solo-filled"
-            flat
-            v-model="searchQuery"
-          >
-          </v-autocomplete>
+          <v-text-field hide-details clearable class="search-bar" density="comfortable" prepend-inner-icon="mdi-magnify"
+            label="جستجو..." variant="solo-filled" flat v-model="searchQuery">
+          </v-text-field>
         </v-col>
       </v-row>
     </v-app-bar>
 
     <v-main>
-      <div style="max-width: 1400px; margin: auto" class="mb-15">
+      <div style="max-width: 1400px; margin: auto;margin-bottom: 8rem">
         <NuxtPage />
       </div>
     </v-main>
 
-    <v-footer class="mt-0 pa-5 pa-md-15">
+    <v-footer class="mt-0 pa-5 pa-md-15 foot">
       <v-row class="ma-0 mx-auto justify-space-between" style="max-width: 1400px">
         <v-col cols="12" md="3">
           <div class="">
@@ -140,22 +92,10 @@
           <div class="text-h5 font-weight-normal text-white">عضویت در خبرنامه</div>
           <div class="text-h6 mt-4 font-weight-light">از جدیدترین مقالات باخبر شوید.</div>
           <div class="mt-3">
-            <v-text-field
-              label="ایمیل خود را وارد کنید"
-              variant="solo-filled"
-              flat
-              density="comfortable"
-              rounded="lg"
-            >
+            <v-text-field label="ایمیل خود را وارد کنید" variant="solo-filled" flat density="comfortable" rounded="lg">
               <template v-slot:append-inner>
-                <v-btn
-                  flat
-                  density="comfortable"
-                  text="عضویت"
-                  class="font-weight-light"
-                  rounded="lg"
-                  color="light-blue-lighten-2"
-                ></v-btn>
+                <v-btn flat density="comfortable" text="عضویت" class="font-weight-light" rounded="lg"
+                  color="light-blue-lighten-2"></v-btn>
               </template>
             </v-text-field>
           </div>
@@ -175,14 +115,6 @@ export default {
   watch: {
     $route(route) {
       this.page = route.name;
-    },
-
-    searchQuery() {
-      if (this.searchQuery != null) {
-        if (this.searchQuery.slug != "") {
-          navigateTo(`/product/view/${this.searchQuery.slug}`);
-        }
-      }
     },
   },
   data() {
@@ -221,6 +153,16 @@ a:link,
 a:visited {
   text-decoration: none;
   color: unset;
+}
+
+
+.foot .v-field,
+.top-menu .v-field {
+  border-radius: var(--border-radius-md) !important;
+}
+
+.top-menu .v-btn {
+  border-radius: var(--border-radius-md) !important;
 }
 
 .v-btn,

@@ -1,7 +1,8 @@
 <template>
   <div class="">
     <Hero class="mt-5" :sliders="[]" :banners="[]" />
-    <AskAndAnswer class="mt-5" />
+    <AskAndAnswer class="mt-5" :showTitle="true" />
+    <Categories class="mt-5" />
     <RecentQuestions class="mt-5" />
     <TopUsers class="mt-5" />
   </div>
@@ -11,6 +12,7 @@
 import Hero from "../components/Hero.vue";
 import AskAndAnswer from "~/components/AskAndAnswer.vue";
 import RecentQuestions from "~/components/RecentQuestions.vue";
+import Categories from "~/components/Categories.vue";
 import TopUsers from "~/components/TopUsers.vue";
 
 const runtimeConfig = useRuntimeConfig();
