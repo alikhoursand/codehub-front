@@ -258,4 +258,14 @@ import AskAndAnswer from '~/components/AskAndAnswer.vue';
   -webkit-line-clamp: 1;
   line-clamp: 1;
 }
+
+
+
+.question-card {
+  border-radius: var(--border-radius-md) !important;
+}
+
+.question-card:nth-child(n+2) {
+  margin-top: 1rem;
+}
 </style>
