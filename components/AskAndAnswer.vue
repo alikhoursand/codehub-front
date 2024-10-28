@@ -4,7 +4,7 @@
 
     <v-row class="ma-0 my-5 justify-space-between align-center categories">
       <v-col cols="12" md="9">
-        <div class="btn-gp d-flex">
+        <div class="btn-gp">
           <v-slide-group v-model="selectedCategory" mandatory show-arrows max-width="750">
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"

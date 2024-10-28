@@ -74,7 +74,7 @@ body,
 .profile-container {
     border-bottom-left-radius: var(--border-radius-md) !important;
     border-bottom-right-radius: var(--border-radius-md) !important;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .chip {
@@ -83,17 +83,43 @@ body,
 }
 
 .reply-btn,
+.rounded-btn,
 .counter-btn,
 .categories-btn {
     border-radius: var(--border-radius-md) !important;
 }
 
+.rounding {
+    border-radius: var(--border-radius-md) !important;
+}
+
+
+.profile-avatar {
+    border: 12px solid #14161e;
+    position: relative;
+    top: -70px;
+}
+
+.profile-av-img {
+    position: relative;
+    /* top: -100px; */
+    margin: -2rem auto;
+    /* right: 130px; */
+    /* margin: 0 auto; */
+}
 
 .sorting {
     background-color: #14161e;
     color: #FFFFFFDE;
 }
 
+.profile-container .av-holder {
+    position: relative;
+}
+
+.sidebar {
+    border-radius: var(--border-radius-md) !important;
+}
 
 .question-card {
     border-radius: var(--border-radius-md) !important;

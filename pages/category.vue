@@ -93,7 +93,7 @@
       <v-row class="ma-0 mt-5">
         <v-col cols="12" lg="3" class="d-none d-lg-block">
           <v-sheet class="px-4 py-6 sidebar">
-            <v-btn block size="x-large" rounded="lg" color="light-blue-lighten-2" append-icon="mdi-plus-box"
+            <v-btn block size="x-large" color="light-blue-lighten-2 categories-btn" append-icon="mdi-plus-box"
               class="font-weight-light" text="ثبت پرسش"></v-btn>
             <div class="mt-8">
               <span class="text-h6">دسته بندی پرسش ها</span>
