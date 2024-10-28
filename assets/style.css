@@ -77,6 +77,11 @@ body,
     overflow: hidden;
 }
 
+
+.counter-btn {
+    border-radius: var(--border-radius-md) !important;
+}
+
 .search-bar .v-field__append-inner {
     display: none;
 }
