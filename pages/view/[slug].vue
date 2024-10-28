@@ -235,20 +235,6 @@ import AskAndAnswer from '~/components/AskAndAnswer.vue';
 </script>
 
 <style>
-.chip {
-  display: inline-block;
-  border: 1px solid #ddd;
-}
-
-
-
-.reply-btn,
-.categories-btn {
-  border-radius: var(--border-radius-md) !important;
-}
-
-
-
 .reply-bg {
   background: #242b37;
 }
@@ -271,15 +257,5 @@ import AskAndAnswer from '~/components/AskAndAnswer.vue';
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   line-clamp: 1;
-}
-
-
-
-.question-card {
-  border-radius: var(--border-radius-md) !important;
-}
-
-.question-card:nth-child(n+2) {
-  margin-top: 1rem;
 }
 </style>

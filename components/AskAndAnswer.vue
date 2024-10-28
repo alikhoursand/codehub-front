@@ -5,7 +5,7 @@
     <v-row class="ma-0 my-5 justify-space-between align-center categories">
       <v-col cols="12" md="9">
         <div class="btn-gp d-flex">
-          <v-slide-group v-model="selectedCategory" show-arrows max-width="750">
+          <v-slide-group v-model="selectedCategory" mandatory show-arrows max-width="750">
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
                 text="همه سوالات" class="font-weight-light" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
@@ -38,8 +38,8 @@
           <v-menu location="bottom" transition="slide-y-transition">
             <template v-slot:activator="{ props }">
 
-              <v-btn v-bind="props" text="مرتب سازی پرسش ها" class="font-weight-light sorting" size="large"
-                prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down" variant="text"></v-btn>
+              <v-btn :ripple="false" v-bind="props" text="مرتب سازی پرسش ها" class="font-weight-light sorting"
+                size="large" prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down" variant="text"></v-btn>
 
             </template>
 

@@ -246,30 +246,6 @@ function showCategories() {
 </script>
 
 <style>
-.sorting {
-  background-color: #14161e;
-  color: #FFFFFFDE;
-}
-
-.chip {
-  display: inline-block;
-  border: 1px solid #ddd;
-}
-
-
-.counter-btn {
-  border-radius: var(--border-radius-md) !important;
-}
-
-.reply-btn,
-.categories-btn {
-  border-radius: var(--border-radius-md) !important;
-}
-
-.buttons .v-btn {
-  border-radius: var(--border-radius-md) !important;
-}
-
 .parag {
   height: 98px;
   line-height: 1.6rem;

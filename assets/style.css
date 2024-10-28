@@ -77,132 +77,32 @@ body,
     overflow: hidden;
 }
 
+.chip {
+    display: inline-block;
+    border: 1px solid #ddd;
+}
 
-.counter-btn {
+.reply-btn,
+.counter-btn,
+.categories-btn {
     border-radius: var(--border-radius-md) !important;
+}
+
+
+.sorting {
+    background-color: #14161e;
+    color: #FFFFFFDE;
+}
+
+
+.question-card {
+    border-radius: var(--border-radius-md) !important;
+}
+
+.question-card:nth-child(n+2) {
+    margin-top: 1rem;
 }
 
 .search-bar .v-field__append-inner {
     display: none;
-}
-
-.v-overlay.v-overlay--absolute.v-overlay--active.v-overlay--contained {
-    z-index: 1 !important;
-}
-
-
-.loading-order .v-skeleton-loader__bone.v-skeleton-loader__heading {
-    margin: 0;
-
-}
-
-
-.contact .v-skeleton-loader__bone.v-skeleton-loader__text,
-.ans .v-skeleton-loader__bone.v-skeleton-loader__text {
-    margin: 0 !important;
-    margin-top: 10px !important;
-}
-
-.faq .v-skeleton-loader__bone.v-skeleton-loader__text,
-.profile .v-skeleton-loader__bone.v-skeleton-loader__text,
-.loading-order .v-skeleton-loader__bone.v-skeleton-loader__text {
-    margin: 0;
-}
-
-.index .v-skeleton-loader__bone.v-skeleton-loader__image {
-    height: 408px !important;
-}
-
-.index2 .v-skeleton-loader__bone.v-skeleton-loader__image {
-    height: 200px !important;
-}
-
-@media only screen and (max-width: 600px) {
-
-    .index .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 200px !important;
-    }
-
-}
-
-@media only screen and (max-width: 700px) {
-
-    .index .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 300px !important;
-    }
-
-}
-
-@media only screen and (max-width: 800px) {
-
-    .index .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 358px !important;
-    }
-
-    .index2 .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 150px !important;
-    }
-
-}
-
-@media only screen and (max-width: 900px) {
-
-    .index .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 408px !important;
-    }
-
-    .index2 .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 200px !important;
-    }
-}
-
-
-
-@media only screen and (max-width: 1000px) {
-
-    .index .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 308px !important;
-    }
-
-    .index2 .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 150px !important;
-    }
-}
-
-
-
-@media only screen and (max-width: 1100px) {
-
-    .index .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 358px !important;
-    }
-
-    .index2 .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 150px !important;
-    }
-}
-
-
-@media only screen and (max-width: 1400px) {
-
-    .index .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 458 !important;
-    }
-
-    .index2 .v-skeleton-loader__bone.v-skeleton-loader__image {
-        height: 200px !important;
-    }
-}
-
-.address .v-skeleton-loader__bone.v-skeleton-loader__text {
-    margin-right: 0;
-    margin-left: 0;
-}
-
-.loading-order .v-skeleton-loader__bone.v-skeleton-loader__avatar {
-    width: 25px !important;
-    height: 25px !important;
-    min-width: 25px !important;
-    min-height: 25px !important;
-    margin: 0;
 }

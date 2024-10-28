@@ -110,16 +110,6 @@ import SectionTitle from "./SectionTitle.vue";
 </script>
 
 <style scoped>
-.chip {
-  display: inline-block;
-  border: 1px solid #ddd;
-}
-
-/* 
-.counter-btn {
-  border-radius: var(--border-radius-md) !important;
-} */
-
 .parag {
   height: 98px;
   line-height: 1.6rem;
