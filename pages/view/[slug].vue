@@ -24,11 +24,11 @@
                       <span class="font-weight-light text-body-1 text-medium-emphasis">2 ساعت پیش</span>
                     </div>
                     <div>
-                      <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2" rounded="lg" height="35"
+                      <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
                         text="160" prepend-icon="mdi-eye"></v-btn>
 
-                      <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2" rounded="lg" size="small"
-                        height="35" icon="mdi-bookmark-multiple"></v-btn>
+                      <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
+                        height="40" icon="mdi-bookmark-multiple"></v-btn>
                     </div>
                   </div>
                 </div>
