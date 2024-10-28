@@ -140,7 +140,7 @@
 
         <v-col cols="12" lg="9">
           <v-card v-for="q in 5" :key="q" elevation="0" class=" question-card">
-            <div v-if="q % 2 == 0" class="reply-bg px-md-10 px-3 py-5">
+            <div v-if="q % 2 == 0" class="light-bg px-md-10 px-3 py-5">
               <div class="right-border pr-3">
                 <div class="text-body-1 font-weight-medium d-flex align-center">
                   <div class="ml-3">یوزر ۱</div>
@@ -235,10 +235,6 @@ import AskAndAnswer from '~/components/AskAndAnswer.vue';
 </script>
 
 <style>
-.reply-bg {
-  background: #242b37;
-}
-
 .sorting {
   border-radius: var(--border-radius-md) !important;
 }

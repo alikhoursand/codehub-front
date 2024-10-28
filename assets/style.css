@@ -93,6 +93,10 @@ body,
     border-radius: var(--border-radius-md) !important;
 }
 
+.light-bg {
+    background: #242b37 !important;
+}
+
 
 .profile-avatar {
     border: 12px solid #14161e;
@@ -102,10 +106,30 @@ body,
 
 .profile-av-img {
     position: relative;
-    /* top: -100px; */
     margin: -2rem auto;
-    /* right: 130px; */
-    /* margin: 0 auto; */
+}
+
+.bg-holder {
+    position: relative;
+}
+
+.editprofile-av-img {
+    /* position: relative; */
+    margin: 0 auto;
+    bottom: -90px;
+}
+
+.editprofile-avatar {
+    border: 12px solid #14161e;
+    position: relative;
+    bottom: -160px;
+}
+
+.alter {
+    width: 200px;
+    margin: 0 auto;
+    height: 200px;
+    border-radius: 50%;
 }
 
 .sorting {
