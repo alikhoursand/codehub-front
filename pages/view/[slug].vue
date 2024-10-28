@@ -235,6 +235,20 @@ import AskAndAnswer from '~/components/AskAndAnswer.vue';
 </script>
 
 <style>
+.chip {
+  display: inline-block;
+  border: 1px solid #ddd;
+}
+
+
+
+.reply-btn,
+.categories-btn {
+  border-radius: var(--border-radius-md) !important;
+}
+
+
+
 .reply-bg {
   background: #242b37;
 }
