@@ -17,44 +17,62 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar scroll-behavior="elevate" height="100" class="top-menu">
+    <v-app-bar scroll-behavior="elevate" height="162" height-md="20" class="top-menu">
+
       <v-row class="justify-space-between align-center ma-0 mx-auto" style="max-width: 1400px">
         <v-col cols="2" class="d-block d-md-none text-right">
           <v-icon icon="mdi-menu" size="large" @click="showSideBar = true"></v-icon>
         </v-col>
 
-        <v-col cols="5" md="2" class="text-right">
+        <v-col cols="5" md="3" class="text-right">
           <NuxtLink to="/">
-            <span class="text-h5 text-sm-h4 font-weight-bold text-light-blue-lighten-2">
-              <span>کد هاب</span>
-            </span>
+            <!-- <span class="text-h5 text-sm-h4 font-weight-bold text-light-blue-lighten-2"> -->
+            <img :eager="true" class="logo" src="/images/logo.svg"></img>
+            <!-- </span> -->
           </NuxtLink>
         </v-col>
 
-        <v-col cols="4" class="d-none d-md-block">
-          <v-text-field hide-details clearable max-width="400px" class="search-bar" prepend-inner-icon="mdi-magnify"
-            label="جستجو در پرسش ها" variant="solo-filled" flat density="comfortable" v-model="searchQuery">
+        <v-col cols="4" class="d-none d-md-block pl-0 search-holder">
+          <v-text-field hide-details clearable max-width="378px" height="52" class="search-bar" label="جستجو در پرسش ها"
+            variant="solo-filled" flat v-model="searchQuery">
+
+            <template v-slot:prepend-inner>
+              <img src="/icons/search-normal-1.svg"></img>
+            </template>
           </v-text-field>
         </v-col>
 
-        <v-col cols="5" md="6" class="text-left pa-0">
+        <v-col cols="5" md="5" class="text-left pa-0 d-flex align-center justify-end">
           <NuxtLink to="/" class="d-inline-block">
-            <v-icon icon="mdi-bell" class="ma-2 ml-5 d-block d-md-none" color="light-blue-lighten-2"></v-icon>
-            <v-btn prepend-icon="mdi-bell" variant="text" color="light-blue-lighten-2" text="اعلان های من"
-              class="ma-2 d-none d-md-flex font-weight-light" size="large"></v-btn>
+            <!-- <v-icon icon="mdi-bell" class="ma-2 ml-5 d-block d-md-none" color="light-blue-lighten-2"></v-icon> -->
+            <img src="/icons/notification.svg" class="ma-2 ml-5 d-block d-md-none"></img>
+
+            <v-btn variant="text" color="light-blue-lighten-2" text="اعلان های من"
+              class="ma-2 d-none d-md-flex font-weight-light" size="x-large">
+              <template v-slot:prepend>
+                <img src="/icons/notification.svg"></img>
+              </template>
+            </v-btn>
           </NuxtLink>
           <NuxtLink to="/" class="d-inline-block">
-            <v-icon icon="mdi-account" class="ma-2 ml-3 d-block d-md-none"></v-icon>
-            <v-btn variant="flat" prepend-icon="mdi-login" color="light-blue-lighten-2" text="ورود / ثبت نام"
-              class="ma-2 d-none d-md-flex font-weight-light" rounded="lg" size="large"></v-btn>
+            <!-- <v-icon icon="mdi-account" class="ma-2 ml-3 d-block d-md-none"></v-icon> -->
+            <img src="/icons/login-2.svg" class="ma-2 ml-3 d-block d-md-none"></img>
+            <v-btn variant="flat" color="light-blue-lighten-2" text="ورود / ثبت نام"
+              class="ma-2 d-none d-md-flex font-weight-light" rounded="lg" size="x-large">
+              <template v-slot:prepend>
+                <img src="/icons/login-1.svg"></img>
+              </template></v-btn>
           </NuxtLink>
         </v-col>
 
-        <!-- <v-col cols="12" md="12" class="d-block d-md-none pt-0">
-          <v-text-field hide-details clearable class="search-bar" density="comfortable" prepend-inner-icon="mdi-magnify"
-            label="جستجو..." variant="solo-filled" flat v-model="searchQuery">
+        <v-col cols="12" md="12" class="d-block d-md-none pt-0 pa-3">
+          <v-text-field hide-details clearable class="search-bar" density="comfortable" label="جستجو..."
+            variant="solo-filled" flat v-model="searchQuery">
+            <template v-slot:prepend-inner>
+              <img src="/icons/search-normal-1.svg"></img>
+            </template>
           </v-text-field>
-        </v-col> -->
+        </v-col>
       </v-row>
     </v-app-bar>
 

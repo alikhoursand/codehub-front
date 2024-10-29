@@ -59,6 +59,45 @@ body,
     border-radius: 5px;
 }
 
+.logo {
+    height: 52px;
+    width: 236px;
+}
+
+/* search-holder */
+
+@media only screen and (max-width: 1000px) {
+
+    .search-holder {
+        padding-right: 1rem !important;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+
+    /* .top-menu,
+    .v-toolbar__content {
+        height: 100px !important;
+    } */
+}
+
+@media only screen and (max-width: 500px) {
+
+    .logo {
+        height: 52px;
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    .logo {
+        height: 52px;
+        width: 150px;
+        margin-top: .25rem;
+    }
+}
+
 .shadow-base {
     box-shadow: 0px 1px 10px #0000000d !important;
 }

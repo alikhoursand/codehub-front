@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SectionTitle :title="'10 کاربر برتر'" :icon="'mdi-seal'" :size="'h6'" />
+    <SectionTitle :title="'10 کاربر برتر'" :icon="'medal-star.svg'" :size="'h6'" />
     <div class="mt-5 px-3">
       <swiper :slidesPerView="2" :spaceBetween="10" :breakpoints="{
         '0': {

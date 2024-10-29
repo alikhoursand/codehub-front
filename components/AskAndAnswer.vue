@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SectionTitle v-if="props.showTitle == true" :title="'پرسش و پاسخ ها'" :size="'h5'" :icon="'mdi-forum'" />
+    <SectionTitle v-if="props.showTitle == true" :title="'پرسش و پاسخ ها'" :size="'h5'" :icon="'messages-1.svg'" />
 
     <v-row class="ma-0 my-5 justify-space-between align-center categories">
       <v-col cols="12" md="9">

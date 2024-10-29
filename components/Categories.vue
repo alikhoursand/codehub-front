@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SectionTitle :title="'همه سوالات'" :size="'h6'" :icon="'mdi-chat-question'" />
+    <SectionTitle :title="'همه سوالات'" :size="'h6'" :icon="'message-question.svg'" />
 
     <v-row class="ma-0 justify-space-between align-center">
       <v-col cols="12" md="6">

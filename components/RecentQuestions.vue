@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="d-flex justify-space-between align-center">
-      <SectionTitle :title="'سوالات اخیر'" :icon="'mdi-clock'" :size="'h6'" />
+      <SectionTitle :title="'سوالات اخیر'" :icon="'clock.svg'" :size="'h6'" />
       <div>
         <v-btn text="مشاهده همه" append-icon="mdi-chevron-left-box" class="font-weight-light" flat variant="plain"
           :ripple="false" style="opacity: 1;"></v-btn>

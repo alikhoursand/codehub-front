@@ -1,7 +1,7 @@
 <template>
   <section>
-    <div :class="[`text-${size}`, 'text-right pt-5 pr-3 font-weight-light pb-5']">
-      <v-icon :icon="icon" color="light-blue-lighten-2" class="ml-3"></v-icon>
+    <div :class="[`text-${size}`, 'text-right pt-5 pr-3 font-weight-light d-flex align-center pb-5']">
+      <img :src="`/icons/${icon}`" class="ml-3" height="36" width="36">
       <span>{{ title }}</span>
     </div>
   </section>
