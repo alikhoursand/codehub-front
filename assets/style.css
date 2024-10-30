@@ -1,4 +1,5 @@
 @import url('/assets/fonts/vazir/vazir.css');
+@import url('/assets/fonts/yekan/yekan.css');
 
 
 /* dark main bg = #1e2124 */
@@ -138,7 +139,7 @@ body,
 
 
 .profile-avatar {
-    border: 12px solid #14161e;
+    border: 12px solid #14161a;
     position: relative;
     top: -70px;
 }
@@ -159,7 +160,7 @@ body,
 }
 
 .editprofile-avatar {
-    border: 12px solid #14161e;
+    border: 12px solid #14161a;
     position: relative;
     bottom: -160px;
 }
@@ -172,7 +173,7 @@ body,
 }
 
 .sorting {
-    background-color: #14161e;
+    background-color: #14161a;
     color: #FFFFFFDE;
 }
 
@@ -194,4 +195,22 @@ body,
 
 .search-bar .v-field__append-inner {
     display: none;
+}
+
+
+
+.right-border {
+    border-right: 3px solid #ddd;
+}
+
+.rep-ans {
+    height: 25px;
+    line-height: 1.6rem;
+    text-align: justify;
+    overflow: hidden;
+    word-break: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
 }

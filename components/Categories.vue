@@ -12,8 +12,17 @@
       </v-col>
       <v-col cols="12" md="6">
         <div class="text-left">
-          <v-btn size="x-large" rounded="lg" color="light-blue-lighten-2" append-icon="mdi-plus-box"
-            class="font-weight-light submit-btn" text="ثبت پرسش"></v-btn>
+          <v-btn
+            size="x-large"
+            rounded="lg"
+            color="light-blue-lighten-2"
+            class="font-weight-light submit-btn"
+            text="ثبت پرسش"
+          >
+            <template v-slot:append>
+              <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+            </template>
+          </v-btn>
         </div>
       </v-col>
     </v-row>
@@ -22,12 +31,26 @@
       <v-col cols="12" lg="3" md="4" sm="6" v-for="q in 11" :key="q">
         <v-hover>
           <template v-slot:default="{ isHovering, props }">
-            <v-card href="/category" v-bind="props" class="pa-5 py-10 category-card" :elevation="isHovering ? 3 : 0">
+            <v-card
+              href="/category"
+              v-bind="props"
+              class="pa-5 py-10 category-card"
+              :elevation="isHovering ? 3 : 0"
+            >
               <div class="d-flex justify-center align-center">
                 <span>موضوع</span>
-                <v-icon class="mr-2" variant="flat" color="light-blue-lighten-2" icon="mdi-language-css3"></v-icon>
+                <v-icon
+                  class="mr-2"
+                  variant="flat"
+                  color="light-blue-lighten-2"
+                  icon="mdi-language-css3"
+                ></v-icon>
               </div>
-              <v-divider color="light-blue-lighten-2" class="my-3 mx-auto border-opacity-100" width="80"></v-divider>
+              <v-divider
+                color="light-blue-lighten-2"
+                class="my-3 mx-auto border-opacity-100"
+                width="80"
+              ></v-divider>
               <div class="text-center text-light-blue-lighten-2">
                 {{ `23 سوال` }}
               </div>
@@ -39,9 +62,7 @@
   </div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style>
 .category-card {

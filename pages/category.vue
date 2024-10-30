@@ -8,8 +8,11 @@
     <div>
       <v-row class="ma-0 mt-10 align-center">
         <v-col cols="12" md="6" class="search">
-          <v-text-field hide-details clearable class="search-bar " prepend-inner-icon="mdi-magnify"
+          <v-text-field hide-details clearable class="search-bar "
             label="جستجو در پرسش ها" variant="solo" flat v-model="searchQuery">
+            <template v-slot:prepend-inner>
+              <img src="/icons/search-normal-1.svg"></img>
+            </template>
           </v-text-field>
         </v-col>
         <v-col cols="12" md="6" class="text-left buttons">
@@ -17,8 +20,17 @@
             <v-menu location="bottom" transition="slide-y-transition">
               <template v-slot:activator="{ props }">
 
-                <v-btn v-bind="props" text="مرتب سازی پرسش ها" class="font-weight-light sorting" size="x-large"
-                  rounded="lg" prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down" variant="flat"></v-btn>
+                <v-btn v-bind="props" text="مرتب سازی پرسش ها" class="font-weight-light sorting rounding" size="x-large"
+                  variant="flat">
+
+                  <template v-slot:prepend>
+                    <img src="/icons/sort.svg" alt="" />
+                  </template>
+                  <template v-slot:append>
+                    <img src="/icons/arrow-down.svg" alt="" />
+                  </template>
+                
+                </v-btn>
 
               </template>
 
@@ -41,21 +53,29 @@
               </v-list>
             </v-menu>
 
-            <v-btn size="x-large" rounded="lg" color="light-blue-lighten-2 mr-2" append-icon="mdi-plus-box"
-              class="font-weight-light" text="ثبت پرسش"></v-btn>
+            <v-btn size="x-large"  color="light-blue-lighten-2 mr-2" 
+              class="font-weight-light rounding" text="ثبت پرسش">
+                <template v-slot:append>
+                  <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+                </template>
+            </v-btn>
 
           </div>
+
           <div class="d-block d-md-none">
 
-
-            <v-btn block size="x-large" rounded="lg" color="light-blue-lighten-2" append-icon="mdi-plus-box"
-              class="font-weight-light" text="ثبت پرسش"></v-btn>
+            <v-btn block size="x-large"  color="light-blue-lighten-2" 
+              class="font-weight-light rounding" text="ثبت پرسش">
+                <template v-slot:append>
+                  <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+                </template>
+            </v-btn>
 
 
             <v-menu location="bottom" transition="slide-y-transition">
               <template v-slot:activator="{ props }">
-                <v-btn v-bind="props" block text="مرتب سازی پرسش ها" class="font-weight-light sorting  mt-3"
-                  size="x-large" rounded="lg" prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down"
+                <v-btn v-bind="props" block text="مرتب سازی پرسش ها" class="font-weight-light rounding sorting  mt-3"
+                  size="x-large"  prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down"
                   variant="flat"></v-btn>
               </template>
 
@@ -93,24 +113,33 @@
       <v-row class="ma-0 mt-5">
         <v-col cols="12" lg="3" class="d-none d-lg-block">
           <v-sheet class="px-4 py-6 sidebar">
-            <v-btn block size="x-large" color="light-blue-lighten-2 categories-btn" append-icon="mdi-plus-box"
-              class="font-weight-light" text="ثبت پرسش"></v-btn>
+            <v-btn block size="x-large" color="light-blue-lighten-2 categories-btn"
+              class="font-weight-light" text="ثبت پرسش"
+              >
+              <template v-slot:append>
+                <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+              </template>
+              </v-btn>
             <div class="mt-8">
-              <span class="text-h6">دسته بندی پرسش ها</span>
+              <span class="text-high-emphasis" style="font-size: 18px;">دسته بندی پرسش ها</span>
             </div>
-            <div>
+            <div class="text-medium-emphasis">
               <v-list lines="one">
-                <v-list-item title="وردپرس"></v-list-item>
-                <v-list-item title="بوت استرپ"></v-list-item>
-                <v-list-item title="لاراول"></v-list-item>
-                <v-list-item title="ری اکت"></v-list-item>
-                <v-list-item title="جنگو"></v-list-item>
-                <v-list-item title="HTML"></v-list-item>
-                <v-list-item title="ویو"></v-list-item>
+                <v-list-item title="وردپرس" class="text-medium-emphasis"></v-list-item>
+                <v-list-item title="بوت استرپ" class="text-medium-emphasis"></v-list-item>
+                <v-list-item title="لاراول" class="text-medium-emphasis"></v-list-item>
+                <v-list-item title="ری اکت" class="text-medium-emphasis"></v-list-item>
+                <v-list-item title="جنگو" class="text-medium-emphasis"></v-list-item>
+                <v-list-item title="HTML" class="text-medium-emphasis"></v-list-item>
+                <v-list-item title="ویو" class="text-medium-emphasis"></v-list-item>
               </v-list>
             </div>
             <v-btn text="موارد بیشتر" variant="plain" style="opacity: 1;" :ripple="false" color="light-blue-lighten-2"
-              append-icon="mdi-menu-down"></v-btn>
+             >
+             <template v-slot:append>
+              <img src="/icons/arrow-down-blue.svg" height="12" width="12" alt="">
+             </template>
+             </v-btn>
           </v-sheet>
         </v-col>
         <v-col cols="12" lg="9">
@@ -136,14 +165,20 @@
                     <div>
                       <div class="d-sm-none mt-4 d-flex align-center">
                         <div>
-                          <span class="font-weight-light text-body-1 text-medium-emphasis">2 ساعت پیش</span>
+                          <span class="font-weight-light text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                         </div>
                         <div>
                           <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
-                            text="160" prepend-icon="mdi-eye"></v-btn>
+                            text="160">
+                            <template v-slot:prepend>
+                              <img src="/icons/eye.svg" alt="" />
+                            </template>
+                          </v-btn>
 
                           <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
-                            height="40" icon="mdi-bookmark-multiple"></v-btn>
+                            height="40">
+                            <img src="/icons/save-2.svg" alt="" />
+                          </v-btn>
                         </div>
                       </div>
                     </div>
@@ -151,14 +186,20 @@
                 </div>
                 <div class="d-sm-flex d-none align-center">
                   <div>
-                    <span class="font-weight-light text-body-1 text-medium-emphasis">2 ساعت پیش</span>
+                    <span class="font-weight-light text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                   </div>
                   <div>
                     <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
-                      text="160" prepend-icon="mdi-eye"></v-btn>
+                      text="160" >
+                      <template v-slot:prepend>
+                        <img src="/icons/eye.svg" alt="" />
+                      </template>
+                            </v-btn>
 
                     <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
-                      height="40" icon="mdi-bookmark-multiple"></v-btn>
+                      height="40" >
+                      <img src="/icons/save-2.svg" alt="" />
+                    </v-btn>
                   </div>
                 </div>
               </div>
@@ -182,7 +223,11 @@
                 <div class="d-block d-sm-none"></div>
                 <div class="d-flex align-center">
                   <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 counter-btn" height="40" text="4"
-                    prepend-icon="mdi-forum"></v-btn>
+                   >
+                    <template v-slot:prepend>
+                      <img src="/icons/messages-2.svg" alt="" />
+                    </template>
+                  </v-btn>
 
                   <div class="d-flex align-center">
                     <v-img class="av-img" rounded="circle" height="40" cover width="40"
@@ -194,13 +239,21 @@
                   </div>
                 </div>
                 <div class="d-none d-sm-block">
-                  <v-btn text="پاسخ" class="reply-btn" size="large" variant="outlined" append-icon="mdi-reply"
-                    color="light-blue-lighten-2"></v-btn>
+                  <v-btn text="پاسخ" class="reply-btn" size="large" variant="outlined" 
+                    color="light-blue-lighten-2 text-h6 font-weight-light">
+                    <template v-slot:append>
+                      <img src="/icons/reply-fill.svg" width="24" height="24" alt="">  
+                    </template>
+                  </v-btn>
                 </div>
 
               </div>
               <v-btn text="پاسخ" class="reply-btn mt-8 d-flex d-sm-none" block size="x-large" variant="outlined"
-                append-icon="mdi-reply" color="light-blue-lighten-2"></v-btn>
+                 color="light-blue-lighten-2 text-h6 font-weight-light">
+                <template v-slot:append>
+                  <img src="/icons/reply-fill.svg" width="24" height="24" alt="">  
+                </template>
+              </v-btn>
 
             </div>
 
@@ -286,11 +339,6 @@ function showCategories() {
   border-radius: var(--border-radius-md) !important;
 }
 
-.sorting:hover {
-  background-color: #14161e;
-  color: #4fc3f7;
-
-}
 
 .search .v-field {
   border-radius: var(--border-radius-md) !important;

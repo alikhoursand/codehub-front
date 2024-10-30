@@ -45,7 +45,7 @@
         <v-col cols="5" md="5" class="text-left pa-0 d-flex align-center justify-end">
           <NuxtLink to="/" class="d-inline-block">
             <!-- <v-icon icon="mdi-bell" class="ma-2 ml-5 d-block d-md-none" color="light-blue-lighten-2"></v-icon> -->
-            <img src="/icons/notification.svg" class="ma-2 ml-5 d-block d-md-none"></img>
+            <img src="/icons/notification.svg" class="ma-2 ml-3 mr-2 d-block d-md-none"></img>
 
             <v-btn variant="text" color="light-blue-lighten-2" text="اعلان های من"
               class="ma-2 d-none d-md-flex font-weight-light" size="x-large">
@@ -83,32 +83,32 @@
     </v-main>
 
     <v-footer class="mt-0 pa-5 pa-md-15 foot">
-      <v-row class="ma-0 mx-auto justify-space-between" style="max-width: 1400px">
+      <v-row class="ma-0 mx-auto justify-space-between text-center text-lg-right" style="max-width: 1400px">
         <v-col cols="12" md="3">
           <div class="">
-            <span class="text-h4 font-weight-bold text-light-blue-lighten-2">
-              <span>کد هاب</span>
-            </span>
+            <!-- <span class="text-h4 font-weight-bold text-light-blue-lighten-2"> -->
+              <img :eager="true" class="w-100" style="max-width: 236px;" src="/images/logo.svg"></img>
+            <!-- </span> -->
           </div>
-          <div class="mt-10 text-h6 font-weight-light">
-            <span>ما را در شبکه های اجتماعی دنبال کنید.</span>
+          <div class="mt-15  font-weight-light">
+            <span class="w-100">ما را در شبکه های اجتماعی دنبال کنید.</span>
           </div>
-          <div class="mt-5 d-flex justify-space-between align-center">
+          <div class="mt-5 d-flex justify-space-between align-center mx-auto" style="max-width: 500px;">
             <v-icon size="large" icon="mdi-instagram"></v-icon>
             <v-icon size="large" icon="mdi-facebook"></v-icon>
             <v-icon size="large" icon="mdi-twitter"></v-icon>
           </div>
         </v-col>
-        <v-col cols="12" md="3" class="text-h6 mt-10 mt-sm-0">
-          <div class="text-h5 font-weight-normal text-white">ارتباط با ما</div>
-          <div class="text-h6 mt-4 font-weight-light">تماس با ما</div>
-          <div class="text-h6 mt-3 font-weight-light">پیشنهاد و انتقاد</div>
-          <div class="text-h6 mt-3 font-weight-light">سوالات متداول</div>
-          <div class="text-h6 mt-3 font-weight-light">وبلاگ</div>
+        <v-col cols="12" md="3" class=" mt-10 mt-sm-0">
+          <div class="text-h6 font-weight-normal text-white">ارتباط با ما</div>
+          <div class=" mt-4 font-weight-light">تماس با ما</div>
+          <div class=" mt-3 font-weight-light">پیشنهاد و انتقاد</div>
+          <div class=" mt-3 font-weight-light">سوالات متداول</div>
+          <div class=" mt-3 font-weight-light">وبلاگ</div>
         </v-col>
-        <v-col cols="12" md="4" class="text-h6 mt-10 mt-sm-0">
-          <div class="text-h5 font-weight-normal text-white">عضویت در خبرنامه</div>
-          <div class="text-h6 mt-4 font-weight-light">از جدیدترین مقالات باخبر شوید.</div>
+        <v-col cols="12" md="4" class=" mt-10 mt-sm-0">
+          <div class="text-h6 font-weight-normal text-white">عضویت در خبرنامه</div>
+          <div class=" mt-4 font-weight-light">از جدیدترین مقالات باخبر شوید.</div>
           <div class="mt-3">
             <v-text-field label="ایمیل خود را وارد کنید" variant="solo-filled" flat density="comfortable" rounded="lg">
               <template v-slot:append-inner>

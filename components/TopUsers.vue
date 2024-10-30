@@ -2,31 +2,43 @@
   <div>
     <SectionTitle :title="'10 کاربر برتر'" :icon="'medal-star.svg'" :size="'h6'" />
     <div class="mt-5 px-3">
-      <swiper :slidesPerView="2" :spaceBetween="10" :breakpoints="{
-        '0': {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        '640': {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        '768': {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-        '1024': {
-          slidesPerView: 4,
-          spaceBetween: 50,
-        },
-        '1600': {
-          slidesPerView: 5,
-          spaceBetween: 30,
-        },
-      }" :navigation="true" :modules="modules" class="mySwiper pb-15">
+      <swiper
+        :slidesPerView="1"
+        :spaceBetween="16"
+        :breakpoints="{
+          '0': {
+            slidesPerView: 1,
+            spaceBetween: 16,
+          },
+          '500': {
+            slidesPerView: 1.75,
+            spaceBetween: 16,
+          },
+          '640': {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+
+          '1200': {
+            slidesPerView: 3,
+            spaceBetween: 16,
+          },
+          '1400': {
+            slidesPerView: 4,
+            spaceBetween: 16,
+          },
+          '1600': {
+            slidesPerView: 5,
+            spaceBetween: 16,
+          },
+        }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper pb-15"
+      >
         <swiper-slide v-for="u in 10">
-          <v-card class="pa-8 round-base" elevation="0">
-            <div class="d-flex justify-center align-center">
+          <v-card class="pa-8 round-base" height="100" elevation="0">
+            <div class="d-flex h-100 justify-center align-center">
               <div>
                 <!-- <v-img
                   class="av-img"
@@ -36,10 +48,13 @@
                   width="35"
                   src="https://picsum.photos/250/300?image=104"
                 ></v-img> -->
-                <v-avatar image="https://picsum.photos/250/300?image=114" size="80"></v-avatar>
+                <v-avatar
+                  image="https://picsum.photos/250/300?image=114"
+                  size="80"
+                ></v-avatar>
               </div>
               <div class="mr-5">
-                <div>کاربر تستی</div>
+                <div class="d-flex align-center" style="height: 50px">کاربر تستی</div>
                 <div dir="ltr" class="mt-3 text-light-blue-lighten-2">@testUser</div>
               </div>
             </div>
