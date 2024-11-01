@@ -87,7 +87,7 @@
         <v-col cols="12" md="3">
           <div class="">
             <!-- <span class="text-h4 font-weight-bold text-light-blue-lighten-2"> -->
-              <img :eager="true" class="w-100" style="max-width: 236px;" src="/images/logo.svg"></img>
+            <img :eager="true" class="w-100" style="max-width: 236px;" src="/images/logo.svg"></img>
             <!-- </span> -->
           </div>
           <div class="mt-15  font-weight-light">
@@ -126,9 +126,8 @@
 <script>
 export default {
   setup() {
-    const cStore = cartStore();
     const runtimeConfig = useRuntimeConfig();
-    return { cStore, runtimeConfig };
+    return { runtimeConfig };
   },
   watch: {
     $route(route) {

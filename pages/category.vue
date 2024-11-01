@@ -8,8 +8,8 @@
     <div>
       <v-row class="ma-0 mt-10 align-center">
         <v-col cols="12" md="6" class="search">
-          <v-text-field hide-details clearable class="search-bar "
-            label="جستجو در پرسش ها" variant="solo" flat v-model="searchQuery">
+          <v-text-field hide-details clearable class="search-bar " label="جستجو در پرسش ها" variant="solo" flat
+            v-model="searchQuery">
             <template v-slot:prepend-inner>
               <img src="/icons/search-normal-1.svg"></img>
             </template>
@@ -29,7 +29,7 @@
                   <template v-slot:append>
                     <img src="/icons/arrow-down.svg" alt="" />
                   </template>
-                
+
                 </v-btn>
 
               </template>
@@ -53,30 +53,27 @@
               </v-list>
             </v-menu>
 
-            <v-btn size="x-large"  color="light-blue-lighten-2 mr-2" 
-              class="font-weight-light rounding" text="ثبت پرسش">
-                <template v-slot:append>
-                  <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
-                </template>
+            <v-btn size="x-large" color="light-blue-lighten-2 mr-2" class="font-weight-light rounding" text="ثبت پرسش">
+              <template v-slot:append>
+                <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+              </template>
             </v-btn>
 
           </div>
 
           <div class="d-block d-md-none">
 
-            <v-btn block size="x-large"  color="light-blue-lighten-2" 
-              class="font-weight-light rounding" text="ثبت پرسش">
-                <template v-slot:append>
-                  <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
-                </template>
+            <v-btn block size="x-large" color="light-blue-lighten-2" class="font-weight-light rounding" text="ثبت پرسش">
+              <template v-slot:append>
+                <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+              </template>
             </v-btn>
 
 
             <v-menu location="bottom" transition="slide-y-transition">
               <template v-slot:activator="{ props }">
                 <v-btn v-bind="props" block text="مرتب سازی پرسش ها" class="font-weight-light rounding sorting  mt-3"
-                  size="x-large"  prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down"
-                  variant="flat"></v-btn>
+                  size="x-large" prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down" variant="flat"></v-btn>
               </template>
 
               <v-list class="drop-list">
@@ -113,13 +110,12 @@
       <v-row class="ma-0 mt-5">
         <v-col cols="12" lg="3" class="d-none d-lg-block">
           <v-sheet class="px-4 py-6 sidebar">
-            <v-btn block size="x-large" color="light-blue-lighten-2 categories-btn"
-              class="font-weight-light" text="ثبت پرسش"
-              >
+            <v-btn block size="x-large" color="light-blue-lighten-2 categories-btn" class="font-weight-light"
+              text="ثبت پرسش">
               <template v-slot:append>
                 <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
               </template>
-              </v-btn>
+            </v-btn>
             <div class="mt-8">
               <span class="text-high-emphasis" style="font-size: 18px;">دسته بندی پرسش ها</span>
             </div>
@@ -134,16 +130,15 @@
                 <v-list-item title="ویو" class="text-medium-emphasis"></v-list-item>
               </v-list>
             </div>
-            <v-btn text="موارد بیشتر" variant="plain" style="opacity: 1;" :ripple="false" color="light-blue-lighten-2"
-             >
-             <template v-slot:append>
-              <img src="/icons/arrow-down-blue.svg" height="12" width="12" alt="">
-             </template>
-             </v-btn>
+            <v-btn text="موارد بیشتر" variant="plain" style="opacity: 1;" :ripple="false" color="light-blue-lighten-2">
+              <template v-slot:append>
+                <img src="/icons/arrow-down-blue.svg" height="12" width="12" alt="">
+              </template>
+            </v-btn>
           </v-sheet>
         </v-col>
         <v-col cols="12" lg="9">
-          <v-card v-for="q in 5" :key="q" href="/view/test" elevation="0" class=" question-card">
+          <v-card v-for="q in 5" :key="q" href="/question/test" elevation="0" class=" question-card">
 
             <div class="pa-md-10 pa-3">
 
@@ -190,14 +185,14 @@
                   </div>
                   <div>
                     <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
-                      text="160" >
+                      text="160">
                       <template v-slot:prepend>
                         <img src="/icons/eye.svg" alt="" />
                       </template>
-                            </v-btn>
+                    </v-btn>
 
                     <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
-                      height="40" >
+                      height="40">
                       <img src="/icons/save-2.svg" alt="" />
                     </v-btn>
                   </div>
@@ -222,8 +217,7 @@
               <div class="mt-8 d-flex justify-space-between  align-center">
                 <div class="d-block d-sm-none"></div>
                 <div class="d-flex align-center">
-                  <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 counter-btn" height="40" text="4"
-                   >
+                  <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 counter-btn" height="40" text="4">
                     <template v-slot:prepend>
                       <img src="/icons/messages-2.svg" alt="" />
                     </template>
@@ -239,19 +233,19 @@
                   </div>
                 </div>
                 <div class="d-none d-sm-block">
-                  <v-btn text="پاسخ" class="reply-btn" size="large" variant="outlined" 
+                  <v-btn text="پاسخ" class="reply-btn" size="large" variant="outlined"
                     color="light-blue-lighten-2 text-h6 font-weight-light">
                     <template v-slot:append>
-                      <img src="/icons/reply-fill.svg" width="24" height="24" alt="">  
+                      <img src="/icons/reply-fill.svg" width="24" height="24" alt="">
                     </template>
                   </v-btn>
                 </div>
 
               </div>
               <v-btn text="پاسخ" class="reply-btn mt-8 d-flex d-sm-none" block size="x-large" variant="outlined"
-                 color="light-blue-lighten-2 text-h6 font-weight-light">
+                color="light-blue-lighten-2 text-h6 font-weight-light">
                 <template v-slot:append>
-                  <img src="/icons/reply-fill.svg" width="24" height="24" alt="">  
+                  <img src="/icons/reply-fill.svg" width="24" height="24" alt="">
                 </template>
               </v-btn>
 

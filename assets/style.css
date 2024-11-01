@@ -1,5 +1,5 @@
-/* @import url('/assets/fonts/vazir/vazir.css'); */
-@import url('/assets/fonts/bakh/yekan.css');
+@import url('/assets/fonts/vazir/vazir.css');
+/* @import url('/assets/fonts/bakh/yekan.css'); */
 
 
 /* dark main bg = #1e2124 */
@@ -9,6 +9,15 @@
     --border-radius-md: 12px;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
 
 body,
 .v-btn,
