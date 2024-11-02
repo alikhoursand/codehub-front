@@ -3,7 +3,7 @@
     <div class="d-flex justify-space-between align-center">
       <SectionTitle :title="'سوالات اخیر'" :icon="'clock.svg'" :size="'h6'" />
       <div>
-        <v-btn text="مشاهده همه" class="font-weight-light" flat variant="plain" :ripple="false" style="opacity: 1">
+        <v-btn text="مشاهده همه" class="" flat variant="plain" :ripple="false" style="opacity: 1">
           <template v-slot:append>
             <img src="/icons/arrow-square-left.svg" width="17" height="17" alt="" />
           </template>
@@ -33,7 +33,7 @@
                       <div>
                         <div class="d-sm-none mt-4 d-flex align-center">
                           <div>
-                            <span class="font-weight-light text-body-2 text-medium-emphasis">2 ساعت پیش</span>
+                            <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                           </div>
                           <div>
                             <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
@@ -54,7 +54,7 @@
                   </div>
                   <div class="d-sm-flex d-none align-center">
                     <div>
-                      <span class="font-weight-light text-body-2 text-medium-emphasis">2 ساعت پیش</span>
+                      <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                     </div>
                     <div>
                       <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
@@ -93,8 +93,8 @@
                   </p>
                 </div>
                 <div class="mt-5">
-                  <div class="chip ml-3 px-3 py-2 border rounded-pill">#طراحی_وب</div>
-                  <div class="chip ml-3 px-3 py-2 border rounded-pill">#فرانت_اند</div>
+                  <div class="chip text-body-2  ml-3 px-3 py-2 border rounded-pill">#طراحی_وب</div>
+                  <div class="chip  text-body-2 ml-3 px-3 py-2 border rounded-pill">#فرانت_اند</div>
                 </div>
                 <div class="mt-8 d-flex justify-end">
                   <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 counter-btn" height="40" text="4">

@@ -74,7 +74,7 @@
 
         <div class="pt-15 mt-15">
           <v-btn @click="menuSheet = true" text="منوی پنل کاربری" prepend-icon="mdi-menu"
-            class=" d-flex d-lg-none rounding font-weight-light" color="light-blue-lighten-2" flat size="large"></v-btn>
+            class=" d-flex d-lg-none rounding " color="light-blue-lighten-2" flat size="large"></v-btn>
         </div>
 
         <Transition mode="out-in" name="fade">

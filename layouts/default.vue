@@ -47,8 +47,8 @@
             <!-- <v-icon icon="mdi-bell" class="ma-2 ml-5 d-block d-md-none" color="light-blue-lighten-2"></v-icon> -->
             <img src="/icons/notification.svg" class="ma-2 ml-3 mr-2 d-block d-md-none"></img>
 
-            <v-btn variant="text" color="light-blue-lighten-2" text="اعلان های من"
-              class="ma-2 d-none d-md-flex font-weight-light" size="x-large">
+            <v-btn variant="text" color="light-blue-lighten-2" text="اعلان های من" class="ma-2 d-none d-md-flex "
+              size="x-large">
               <template v-slot:prepend>
                 <img src="/icons/notification.svg"></img>
               </template>
@@ -57,8 +57,8 @@
           <NuxtLink to="/" class="d-inline-block">
             <!-- <v-icon icon="mdi-account" class="ma-2 ml-3 d-block d-md-none"></v-icon> -->
             <img src="/icons/login-2.svg" class="ma-2 ml-3 d-block d-md-none"></img>
-            <v-btn variant="flat" color="light-blue-lighten-2" text="ورود / ثبت نام"
-              class="ma-2 d-none d-md-flex font-weight-light" rounded="lg" size="x-large">
+            <v-btn variant="flat" color="light-blue-lighten-2" text="ورود / ثبت نام" class="ma-2 d-none d-md-flex "
+              rounded="lg" size="x-large">
               <template v-slot:prepend>
                 <img src="/icons/login-1.svg"></img>
               </template></v-btn>
@@ -90,7 +90,7 @@
             <img :eager="true" class="w-100" style="max-width: 236px;" src="/images/logo.svg"></img>
             <!-- </span> -->
           </div>
-          <div class="mt-15  font-weight-light">
+          <div class="mt-15  ">
             <span class="w-100">ما را در شبکه های اجتماعی دنبال کنید.</span>
           </div>
           <div class="mt-5 d-flex justify-space-between align-center mx-auto" style="max-width: 500px;">
@@ -101,18 +101,18 @@
         </v-col>
         <v-col cols="12" md="3" class=" mt-10 mt-sm-0">
           <div class="text-h6 font-weight-normal text-white">ارتباط با ما</div>
-          <div class=" mt-4 font-weight-light">تماس با ما</div>
-          <div class=" mt-3 font-weight-light">پیشنهاد و انتقاد</div>
-          <div class=" mt-3 font-weight-light">سوالات متداول</div>
-          <div class=" mt-3 font-weight-light">وبلاگ</div>
+          <div class=" mt-4 ">تماس با ما</div>
+          <div class=" mt-3 ">پیشنهاد و انتقاد</div>
+          <div class=" mt-3 ">سوالات متداول</div>
+          <div class=" mt-3 ">وبلاگ</div>
         </v-col>
         <v-col cols="12" md="4" class=" mt-10 mt-sm-0">
           <div class="text-h6 font-weight-normal text-white">عضویت در خبرنامه</div>
-          <div class=" mt-4 font-weight-light">از جدیدترین مقالات باخبر شوید.</div>
+          <div class=" mt-4 ">از جدیدترین مقالات باخبر شوید.</div>
           <div class="mt-3">
             <v-text-field label="ایمیل خود را وارد کنید" variant="solo-filled" flat density="comfortable" rounded="lg">
               <template v-slot:append-inner>
-                <v-btn flat density="comfortable" text="عضویت" class="font-weight-light" rounded="lg"
+                <v-btn flat density="comfortable" text="عضویت" class="" rounded="lg"
                   color="light-blue-lighten-2"></v-btn>
               </template>
             </v-text-field>
@@ -174,7 +174,8 @@ a:visited {
 
 
 .foot .v-field,
-.top-menu .v-field {
+.top-menu .v-field,
+.auth .v-field {
   border-radius: var(--border-radius-md) !important;
 }
 

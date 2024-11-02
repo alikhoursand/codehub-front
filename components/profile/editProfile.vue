@@ -120,9 +120,9 @@
     </div>
     <div class="mt-5 text-left pa-3">
       <v-btn size="x-large" text="انصراف" @click="cancelEditing()" variant="outlined" flat
-        color="light-blue-lighten-2 font-weight-light rounding"></v-btn>
+        color="light-blue-lighten-2  rounding"></v-btn>
       <v-btn size="x-large" text="ذخیره اطلاعات" variant="flat" flat
-        color="light-blue-lighten-2 font-weight-light rounding  mr-2"></v-btn>
+        color="light-blue-lighten-2  rounding  mr-2"></v-btn>
     </div>
   </div>
 </template>

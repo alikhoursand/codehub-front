@@ -84,7 +84,7 @@
     <div class="mt-5 text-left">
 
       <v-btn @click="editProfile()" size="x-large" text="ویرایش پروفایل" variant="flat" flat
-        color="light-blue-lighten-2 font-weight-light rounding  mr-2">
+        color="light-blue-lighten-2  rounding  mr-2">
         <template v-slot:prepend>
           <img src="/icons/edit-2.svg" alt="">
         </template>

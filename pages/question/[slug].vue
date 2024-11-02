@@ -12,11 +12,8 @@
                     <v-avatar image="https://picsum.photos/250/300?image=114" size="65">
                     </v-avatar>
                   </div>
-                  <div
-                    class="mr-4"
-                    style="width: 200px; word-break: break-all; white-space: normal"
-                  >
-                    <span class="font-weight-light" style="font-size: 1.4rem">
+                  <div class="mr-4" style="width: 200px; word-break: break-all; white-space: normal">
+                    <span class="" style="font-size: 1.4rem">
                       پریا سهیلی
                     </span>
                   </div>
@@ -24,30 +21,18 @@
                 <div>
                   <div class="d-sm-none mt-4 d-flex align-center">
                     <div>
-                      <span class="font-weight-light text-body-2 text-medium-emphasis"
-                        >2 ساعت پیش</span
-                      >
+                      <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                     </div>
                     <div>
-                      <v-btn
-                        flat
-                        color="#1e2124"
-                        class="text-light-blue-lighten-2 mr-2 counter-btn"
-                        height="40"
-                        text="160"
-                      >
+                      <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
+                        text="160">
                         <template v-slot:prepend>
                           <img src="/icons/eye.svg" alt="" />
                         </template>
                       </v-btn>
 
-                      <v-btn
-                        flat
-                        color="#1e2124"
-                        class="text-light-blue-lighten-2 mr-2 counter-btn"
-                        size="small"
-                        height="40"
-                      >
+                      <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
+                        height="40">
                         <img src="/icons/save-2.svg" alt="" />
                       </v-btn>
                     </div>
@@ -57,30 +42,16 @@
             </div>
             <div class="d-sm-flex d-none align-center">
               <div>
-                <span class="font-weight-light text-body-2 text-medium-emphasis"
-                  >2 ساعت پیش</span
-                >
+                <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
               </div>
               <div>
-                <v-btn
-                  flat
-                  color="#1e2124"
-                  class="text-light-blue-lighten-2 mr-2 counter-btn"
-                  height="40"
-                  text="160"
-                >
+                <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40" text="160">
                   <template v-slot:prepend>
                     <img src="/icons/eye.svg" alt="" />
                   </template>
                 </v-btn>
 
-                <v-btn
-                  flat
-                  color="#1e2124"
-                  class="text-light-blue-lighten-2 mr-2 counter-btn"
-                  size="small"
-                  height="40"
-                >
+                <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small" height="40">
                   <img src="/icons/save-2.svg" alt="" />
                 </v-btn>
               </div>
@@ -102,46 +73,28 @@
             </p>
           </div>
           <div class="mt-5">
-            <div class="chip ml-3 px-3 py-2 border rounded-pill">#طراحی_وب</div>
-            <div class="chip ml-3 px-3 py-2 border rounded-pill">#فرانت_اند</div>
+            <div class="chip text-body-2 ml-3 px-3 py-2 border rounded-pill">#طراحی_وب</div>
+            <div class="chip text-body-2 ml-3 px-3 py-2 border rounded-pill">#فرانت_اند</div>
           </div>
           <div class="mt-8 d-flex justify-space-between align-center">
             <div class="d-block d-sm-none"></div>
             <div class="d-flex align-center">
-              <v-btn
-                flat
-                color="#1e2124"
-                class="text-light-blue-lighten-2 counter-btn"
-                height="40"
-                text="4"
-              >
+              <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 counter-btn" height="40" text="4">
                 <template v-slot:prepend>
                   <img src="/icons/messages-2.svg" alt="" />
                 </template>
               </v-btn>
             </div>
             <div class="d-none d-sm-block">
-              <v-btn
-                text="پاسخ"
-                class="reply-btn"
-                size="x-large"
-                variant="outlined"
-                color="light-blue-lighten-2"
-              >
+              <v-btn text="پاسخ" class="reply-btn" size="x-large" variant="outlined" color="light-blue-lighten-2">
                 <template v-slot:append>
                   <img src="/icons/reply-fill.svg" width="24" height="24" alt="" />
                 </template>
               </v-btn>
             </div>
           </div>
-          <v-btn
-            text="پاسخ"
-            class="reply-btn mt-8 d-flex d-sm-none"
-            block
-            size="x-large"
-            variant="outlined"
-            color="light-blue-lighten-2"
-          >
+          <v-btn text="پاسخ" class="reply-btn mt-8 d-flex d-sm-none" block size="x-large" variant="outlined"
+            color="light-blue-lighten-2">
             <template v-slot:append>
               <img src="/icons/reply-fill.svg" width="24" height="24" alt="" />
             </template>
@@ -154,21 +107,13 @@
       <v-row class="ma-0 mt-15">
         <v-col cols="12" lg="3" class="d-none d-lg-block">
           <v-sheet class="px-4 py-6 sidebar">
-            <v-btn
-              block
-              size="x-large"
-              color="light-blue-lighten-2 categories-btn"
-              class="font-weight-light"
-              text="ثبت پرسش"
-            >
+            <v-btn block size="x-large" color="light-blue-lighten-2 categories-btn" class="" text="ثبت پرسش">
               <template v-slot:append>
                 <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
               </template>
             </v-btn>
             <div class="mt-8">
-              <span class="text-high-emphasis" style="font-size: 18px"
-                >دسته بندی پرسش ها</span
-              >
+              <span class="text-high-emphasis" style="font-size: 18px">دسته بندی پرسش ها</span>
             </div>
             <div class="text-medium-emphasis">
               <v-list lines="one">
@@ -181,13 +126,7 @@
                 <v-list-item title="ویو" class="text-medium-emphasis"></v-list-item>
               </v-list>
             </div>
-            <v-btn
-              text="موارد بیشتر"
-              variant="plain"
-              style="opacity: 1"
-              :ripple="false"
-              color="light-blue-lighten-2"
-            >
+            <v-btn text="موارد بیشتر" variant="plain" style="opacity: 1" :ripple="false" color="light-blue-lighten-2">
               <template v-slot:append>
                 <img src="/icons/arrow-down-blue.svg" height="12" width="12" alt="" />
               </template>
@@ -216,17 +155,11 @@
                   <div class="">
                     <div class="d-flex align-center">
                       <div>
-                        <v-avatar
-                          image="https://picsum.photos/250/300?image=114"
-                          size="65"
-                        >
+                        <v-avatar image="https://picsum.photos/250/300?image=114" size="65">
                         </v-avatar>
                       </div>
-                      <div
-                        class="mr-4"
-                        style="width: 200px; word-break: break-all; white-space: normal"
-                      >
-                        <span class="font-weight-light" style="font-size: 1.4rem">
+                      <div class="mr-4" style="width: 200px; word-break: break-all; white-space: normal">
+                        <span class="" style="font-size: 1.4rem">
                           پریا سهیلی
                         </span>
                       </div>
@@ -234,18 +167,11 @@
                     <div>
                       <div class="d-sm-none mt-4 d-flex align-center">
                         <div>
-                          <span class="font-weight-light text-body-2 text-medium-emphasis"
-                            >2 ساعت پیش</span
-                          >
+                          <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                         </div>
                         <div>
-                          <v-btn
-                            flat
-                            color="#1e2124"
-                            class="text-light-blue-lighten-2 mr-2 counter-btn"
-                            size="small"
-                            height="40"
-                          >
+                          <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
+                            height="40">
                             <img src="/icons/copy.svg" width="24" height="24" alt="" />
                           </v-btn>
                         </div>
@@ -255,18 +181,11 @@
                 </div>
                 <div class="d-sm-flex d-none align-center">
                   <div>
-                    <span class="font-weight-light text-body-2 text-medium-emphasis"
-                      >2 ساعت پیش</span
-                    >
+                    <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                   </div>
                   <div>
-                    <v-btn
-                      flat
-                      color="#1e2124"
-                      class="text-light-blue-lighten-2 mr-2 counter-btn"
-                      size="small"
-                      height="40"
-                    >
+                    <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
+                      height="40">
                       <img src="/icons/copy.svg" width="24" height="24" alt="" />
                     </v-btn>
                   </div>
@@ -288,48 +207,25 @@
               <div class="mt-8 d-flex justify-space-between align-center">
                 <div class="d-block d-sm-none"></div>
                 <div class="d-flex align-center">
-                  <v-btn
-                    flat
-                    color="#1e2124"
-                    class="text-light-blue-lighten-2 counter-btn"
-                    height="40"
-                    text="1 پاسخ"
-                  ></v-btn>
+                  <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 counter-btn" height="40"
+                    text="1 پاسخ"></v-btn>
 
-                  <v-btn
-                    flat
-                    color="#1e2124"
-                    class="text-light-blue-lighten-2 mr-2 counter-btn"
-                    height="40"
-                    text="3"
-                  >
+                  <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40" text="3">
                     <template v-slot:prepend>
                       <img src="/icons/heart.svg" width="24" height="24" alt="" />
                     </template>
                   </v-btn>
                 </div>
                 <div class="d-none d-sm-block">
-                  <v-btn
-                    text="پاسخ"
-                    class="reply-btn"
-                    size="x-large"
-                    variant="outlined"
-                    color="light-blue-lighten-2"
-                  >
+                  <v-btn text="پاسخ" class="reply-btn" size="x-large" variant="outlined" color="light-blue-lighten-2">
                     <template v-slot:append>
                       <img src="/icons/reply-fill.svg" width="24" height="24" alt="" />
                     </template>
                   </v-btn>
                 </div>
               </div>
-              <v-btn
-                text="پاسخ"
-                class="reply-btn mt-8 d-flex d-sm-none"
-                block
-                size="x-large"
-                variant="outlined"
-                color="light-blue-lighten-2"
-              >
+              <v-btn text="پاسخ" class="reply-btn mt-8 d-flex d-sm-none" block size="x-large" variant="outlined"
+                color="light-blue-lighten-2">
                 <template v-slot:append>
                   <img src="/icons/reply-fill.svg" width="24" height="24" alt="" />
                 </template>

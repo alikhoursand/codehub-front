@@ -3,7 +3,7 @@
     <AskAndAnswer class="mt-15" :showTitle="false" />
 
     <div class="mt-15 pr-3">
-      <span class="text-h4 font-weight-light">وردپرس</span>
+      <span class="text-h4 ">وردپرس</span>
     </div>
     <div>
       <v-row class="ma-0 mt-10 align-center">
@@ -20,8 +20,7 @@
             <v-menu location="bottom" transition="slide-y-transition">
               <template v-slot:activator="{ props }">
 
-                <v-btn v-bind="props" text="مرتب سازی پرسش ها" class="font-weight-light sorting rounding" size="x-large"
-                  variant="flat">
+                <v-btn v-bind="props" text="مرتب سازی پرسش ها" class=" sorting rounding" size="x-large" variant="flat">
 
                   <template v-slot:prepend>
                     <img src="/icons/sort.svg" alt="" />
@@ -53,7 +52,7 @@
               </v-list>
             </v-menu>
 
-            <v-btn size="x-large" color="light-blue-lighten-2 mr-2" class="font-weight-light rounding" text="ثبت پرسش">
+            <v-btn size="x-large" color="light-blue-lighten-2 mr-2" class=" rounding" text="ثبت پرسش">
               <template v-slot:append>
                 <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
               </template>
@@ -63,7 +62,7 @@
 
           <div class="d-block d-md-none">
 
-            <v-btn block size="x-large" color="light-blue-lighten-2" class="font-weight-light rounding" text="ثبت پرسش">
+            <v-btn block size="x-large" color="light-blue-lighten-2" class=" rounding" text="ثبت پرسش">
               <template v-slot:append>
                 <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
               </template>
@@ -72,8 +71,8 @@
 
             <v-menu location="bottom" transition="slide-y-transition">
               <template v-slot:activator="{ props }">
-                <v-btn v-bind="props" block text="مرتب سازی پرسش ها" class="font-weight-light rounding sorting  mt-3"
-                  size="x-large" prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down" variant="flat"></v-btn>
+                <v-btn v-bind="props" block text="مرتب سازی پرسش ها" class=" rounding sorting  mt-3" size="x-large"
+                  prepend-icon="mdi-sort-variant" append-icon="mdi-menu-down" variant="flat"></v-btn>
               </template>
 
               <v-list class="drop-list">
@@ -103,15 +102,14 @@
       </v-row>
     </div>
     <div class="mt-5 px-3 d-block d-lg-none">
-      <v-btn color="light-blue-lighten-2" size="large" text="دسته بندی پرسش ها" class="font-weight-light categories-btn"
-        variant="flat" @click="showCategories()" flat></v-btn>
+      <v-btn color="light-blue-lighten-2" size="large" text="دسته بندی پرسش ها" class=" categories-btn" variant="flat"
+        @click="showCategories()" flat></v-btn>
     </div>
     <div>
       <v-row class="ma-0 mt-5">
         <v-col cols="12" lg="3" class="d-none d-lg-block">
           <v-sheet class="px-4 py-6 sidebar">
-            <v-btn block size="x-large" color="light-blue-lighten-2 categories-btn" class="font-weight-light"
-              text="ثبت پرسش">
+            <v-btn block size="x-large" color="light-blue-lighten-2 categories-btn" class="" text="ثبت پرسش">
               <template v-slot:append>
                 <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
               </template>
@@ -160,7 +158,7 @@
                     <div>
                       <div class="d-sm-none mt-4 d-flex align-center">
                         <div>
-                          <span class="font-weight-light text-body-2 text-medium-emphasis">2 ساعت پیش</span>
+                          <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                         </div>
                         <div>
                           <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
@@ -181,7 +179,7 @@
                 </div>
                 <div class="d-sm-flex d-none align-center">
                   <div>
-                    <span class="font-weight-light text-body-2 text-medium-emphasis">2 ساعت پیش</span>
+                    <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                   </div>
                   <div>
                     <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
@@ -211,8 +209,8 @@
                 </p>
               </div>
               <div class="mt-5">
-                <div class="chip ml-3 px-3 py-2 border rounded-pill">#طراحی_وب</div>
-                <div class="chip ml-3 px-3 py-2 border rounded-pill">#فرانت_اند</div>
+                <div class="chip text-body-2 ml-3 px-3 py-2 border rounded-pill">#طراحی_وب</div>
+                <div class="chip text-body-2 ml-3 px-3 py-2 border rounded-pill">#فرانت_اند</div>
               </div>
               <div class="mt-8 d-flex justify-space-between  align-center">
                 <div class="d-block d-sm-none"></div>
@@ -234,7 +232,7 @@
                 </div>
                 <div class="d-none d-sm-block">
                   <v-btn text="پاسخ" class="reply-btn" size="large" variant="outlined"
-                    color="light-blue-lighten-2 text-h6 font-weight-light">
+                    color="light-blue-lighten-2 text-h6 ">
                     <template v-slot:append>
                       <img src="/icons/reply-fill.svg" width="24" height="24" alt="">
                     </template>
@@ -243,7 +241,7 @@
 
               </div>
               <v-btn text="پاسخ" class="reply-btn mt-8 d-flex d-sm-none" block size="x-large" variant="outlined"
-                color="light-blue-lighten-2 text-h6 font-weight-light">
+                color="light-blue-lighten-2 text-h6 ">
                 <template v-slot:append>
                   <img src="/icons/reply-fill.svg" width="24" height="24" alt="">
                 </template>

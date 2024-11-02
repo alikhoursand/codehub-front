@@ -1,70 +1,29 @@
 <template>
   <div>
-    <SectionTitle
-      v-if="props.showTitle == true"
-      :title="'پرسش و پاسخ ها'"
-      :size="'h5'"
-      :icon="'messages-1.svg'"
-    />
+    <SectionTitle v-if="props.showTitle == true" :title="'پرسش و پاسخ ها'" :size="'h6'" :icon="'messages-1.svg'" />
 
     <v-row class="ma-0 my-5 justify-space-between align-center categories">
       <v-col cols="12" md="9">
         <div class="btn-gp">
           <v-slide-group v-model="selectedCategory" mandatory show-arrows max-width="750">
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn
-                size="large"
-                flat
-                rounded="lg"
-                height="55"
-                :color="isSelected ? '#14161a' : undefined"
-                text="همه سوالات"
-                class="font-weight-light"
-                :variant="isSelected ? 'flat' : 'text'"
-                @click="toggle"
-              >
+              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+                text="همه سوالات" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn
-                size="large"
-                flat
-                rounded="lg"
-                height="55"
-                :color="isSelected ? '#14161a' : undefined"
-                text="گفتگو های خصوصی"
-                class="font-weight-light"
-                :variant="isSelected ? 'flat' : 'text'"
-                @click="toggle"
-              >
+              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+                text="گفتگو های خصوصی" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn
-                size="large"
-                flat
-                rounded="lg"
-                height="55"
-                :color="isSelected ? '#14161a' : undefined"
-                text="پرسش های حل شده"
-                class="font-weight-light"
-                :variant="isSelected ? 'flat' : 'text'"
-                @click="toggle"
-              >
+              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+                text="پرسش های حل شده" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn
-                size="large"
-                flat
-                rounded="lg"
-                height="55"
-                :color="isSelected ? '#14161a' : undefined"
-                text="پرسش های بدون پاسخ"
-                class="font-weight-light"
-                :variant="isSelected ? 'flat' : 'text'"
-                @click="toggle"
-              >
+              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+                text="پرسش های بدون پاسخ" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
           </v-slide-group>
@@ -74,14 +33,8 @@
         <div class="text-left">
           <v-menu location="bottom" transition="slide-y-transition">
             <template v-slot:activator="{ props }">
-              <v-btn
-                :ripple="false"
-                v-bind="props"
-                text="مرتب سازی پرسش ها"
-                class="font-weight-light sorting"
-                size="large"
-                variant="text"
-              >
+              <v-btn :ripple="false" v-bind="props" text="مرتب سازی پرسش ها" class=" sorting" size="large"
+                variant="text">
                 <template v-slot:prepend>
                   <img src="/icons/sort.svg" alt="" />
                 </template>

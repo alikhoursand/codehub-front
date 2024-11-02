@@ -19,8 +19,7 @@
                 </div>
               </div>
               <div class="pa-5 pr-3 mt-10 mr-5">
-                <v-btn text="دنبال کردن" color="light-blue-lighten-2 font-weight-light rounded-btn"
-                  size="x-large"></v-btn>
+                <v-btn text="دنبال کردن" color="light-blue-lighten-2  rounded-btn" size="x-large"></v-btn>
               </div>
             </v-col>
             <v-col cols="12" md="4" class="">
@@ -92,8 +91,8 @@
                   <img src="/icons/more-square.svg" alt="">
                 </v-btn>
               </div>
-              <v-btn class="round-btn mt-3" block text="دنبال کردن"
-                color="light-blue-lighten-2  font-weight-light rounded-btn" size="x-large"></v-btn>
+              <v-btn class="round-btn mt-3" block text="دنبال کردن" color="light-blue-lighten-2   rounded-btn"
+                size="x-large"></v-btn>
             </v-col>
           </v-row>
         </div>
@@ -104,17 +103,17 @@
           <v-slide-group v-model="selectedButton" mandatory show-arrows max-width="750">
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
-                text="درباره کاربر" class="font-weight-light" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
+                text="درباره کاربر" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
-                text="پرسش های کاربر" class="font-weight-light" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
+                text="پرسش های کاربر" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
-                text="پاسخ های کاربر" class="font-weight-light" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
+                text="پاسخ های کاربر" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
           </v-slide-group>
@@ -155,7 +154,7 @@
                               word-break: break-all;
                               white-space: normal;
                             ">
-                            <span class="font-weight-light" style="font-size: 1.4rem">
+                            <span class="" style="font-size: 1.4rem">
                               پریا سهیلی
                             </span>
                           </div>
@@ -163,7 +162,7 @@
                         <div>
                           <div class="d-sm-none mt-4 d-flex align-center">
                             <div>
-                              <span class="font-weight-light text-body-2 text-medium-emphasis">2 ساعت پیش</span>
+                              <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                             </div>
                             <div>
                               <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
@@ -184,7 +183,7 @@
                     </div>
                     <div class="d-sm-flex d-none align-center">
                       <div>
-                        <span class="font-weight-light text-body-2 text-medium-emphasis">2 ساعت پیش</span>
+                        <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                       </div>
                       <div>
                         <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
@@ -279,7 +278,7 @@
                               word-break: break-all;
                               white-space: normal;
                             ">
-                            <span class="font-weight-light" style="font-size: 1.4rem">
+                            <span class="" style="font-size: 1.4rem">
                               پریا سهیلی
                             </span>
                           </div>
@@ -287,7 +286,7 @@
                         <div>
                           <div class="d-sm-none mt-4 d-flex align-center">
                             <div>
-                              <span class="font-weight-light text-body-2 text-medium-emphasis">2 ساعت پیش</span>
+                              <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                             </div>
                             <div>
                               <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn"
@@ -301,7 +300,7 @@
                     </div>
                     <div class="d-sm-flex d-none align-center">
                       <div>
-                        <span class="font-weight-light text-body-2 text-medium-emphasis">2 ساعت پیش</span>
+                        <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                       </div>
                       <div>
                         <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
