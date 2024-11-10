@@ -1,30 +1,45 @@
 <template>
-  <v-app theme="myCustomDarkTheme" style="position: relative">
+  <v-app :theme="theme" style="position: relative">
     <v-navigation-drawer v-model="showSideBar" disable-resize-watcher>
-      <v-icon icon="mdi-close" class="ma-5 mt-8" @click="showSideBar = false"></v-icon>
-
-      <v-list>
-        <NuxtLink to="/" class="">
-          <v-list-item>
+      <v-list class="pt-0">
+        <nuxt-link to="/auth">
+          <v-list-item class="login-menu">
             <template v-slot:prepend>
-              <v-icon :color="page == 'index' ? 'light-blue-lighten-2' : ''" icon="mdi-home"></v-icon>
+                <img src="/public/icons/login-1.svg"></img>
             </template>
-            <div :class="page == 'index' ? 'text-light-blue-lighten-2' : ''">
+            <div :class="['menu-item']">
+              ورود / ثبت نام
+            </div>
+          </v-list-item>
+        </nuxt-link>
+
+
+        <NuxtLink to="/" class="mt-10">
+          <v-list-item class="mt-10">
+            <template v-slot:prepend>
+                <img src="/icons/home-2.svg"></img>
+            </template>
+            <div :class="[page == 'index' ? 'text-light-blue-lighten-2' : '','menu-item']">
               صفحه اصلی
             </div>
           </v-list-item>
+        
+         
         </NuxtLink>
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar scroll-behavior="elevate" height="162" height-md="20" class="top-menu">
+    <v-app-bar scroll-behavior="elevate" height="120" height-md="20" class="top-menu">
+    <template v-slot:prepend>
+      <v-icon class="d-block d-lg-none" icon="mdi-menu" size="large" @click="showSideBar = true"></v-icon>
+    </template>
 
       <v-row class="justify-space-between align-center ma-0 mx-auto" style="max-width: 1400px">
-        <v-col cols="2" class="d-block d-md-none text-right">
+        <!-- <v-col cols="2" class="d-block d-lg-none text-right">
           <v-icon icon="mdi-menu" size="large" @click="showSideBar = true"></v-icon>
-        </v-col>
+        </v-col> -->
 
-        <v-col cols="5" md="3" class="text-right">
+        <v-col cols="3" lg="3" class="text-right">
           <NuxtLink to="/">
             <!-- <span class="text-h5 text-sm-h4 font-weight-bold text-light-blue-lighten-2"> -->
             <img :eager="true" class="logo" src="/images/logo.svg"></img>
@@ -32,8 +47,8 @@
           </NuxtLink>
         </v-col>
 
-        <v-col cols="4" class="d-none d-md-block pl-0 search-holder">
-          <v-text-field hide-details clearable max-width="378px" height="52" class="search-bar" label="جستجو در پرسش ها"
+        <v-col cols="6" lg="5" class="d-none d-md-block pl-0 search-holder">
+          <v-text-field hide-details  clearable max-width="400px" height="48" class="search-bar" label="جستجو در پرسش ها"
             variant="solo-filled" flat v-model="searchQuery">
 
             <template v-slot:prepend-inner>
@@ -42,12 +57,15 @@
           </v-text-field>
         </v-col>
 
-        <v-col cols="5" md="5" class="text-left pa-0 d-flex align-center justify-end">
+        <v-col cols="2" lg="4" class="text-left pa-0 d-flex align-center justify-end">
+
+          <img src="/icons/search-normal-2.svg" @click="searchDialog = true" class="ml-2 mr-2 d-block d-md-none" alt="">
+
           <NuxtLink to="/" class="d-inline-block">
             <!-- <v-icon icon="mdi-bell" class="ma-2 ml-5 d-block d-md-none" color="light-blue-lighten-2"></v-icon> -->
-            <img src="/icons/notification.svg" class="ma-2 ml-3 mr-2 d-block d-md-none"></img>
+            <img src="/icons/notification.svg" class="ma-2 ml-2 mr-2 d-block d-lg-none"></img>
 
-            <v-btn variant="text" color="light-blue-lighten-2" text="اعلان های من" class="ma-2 d-none d-md-flex "
+            <v-btn variant="outlined" color="light-blue-lighten-2" text="اعلان های من" class=" rounding ma-2 d-none d-lg-flex "
               size="x-large">
               <template v-slot:prepend>
                 <img src="/icons/notification.svg"></img>
@@ -56,27 +74,37 @@
           </NuxtLink>
           <NuxtLink to="/" class="d-inline-block">
             <!-- <v-icon icon="mdi-account" class="ma-2 ml-3 d-block d-md-none"></v-icon> -->
-            <img src="/icons/login-2.svg" class="ma-2 ml-3 d-block d-md-none"></img>
-            <v-btn variant="flat" color="light-blue-lighten-2" text="ورود / ثبت نام" class="ma-2 d-none d-md-flex "
-              rounded="lg" size="x-large">
+            <!-- <img src="/icons/login-2.svg" class="ma-2 ml-2 d-block d-lg-none"></img> -->
+            <v-btn variant="flat" color="light-blue-lighten-2" text="ورود / ثبت نام" class=" rounding  mr-0 ma-2 d-none d-lg-flex "
+              size="x-large">
               <template v-slot:prepend>
                 <img src="/icons/login-1.svg"></img>
               </template></v-btn>
           </NuxtLink>
+
+          <v-btn size="x-small" color="light-blue-lighten-2" :variant="theme == 'myDark' ? 'flat' : 'tonal'" icon="" class="ml-2 mr-2 d-flex d-lg-none" rounded="xl" flat >
+          <img :src="theme == 'myDark' ? '/icons/moon.svg' : '/icons/sun-1.svg'" @click="changeTheme()" style="transform: scaleX(-1);" alt="">
+          </v-btn>
+
+          <v-btn size="small" color="light-blue-lighten-2" :variant="theme == 'myDark' ? 'flat' : 'tonal'" icon="" class="ml-2 mr-2 d-none d-lg-flex" rounded="xl" flat >
+          <img :src="theme == 'myDark' ? '/icons/moon.svg' : '/icons/sun-1.svg'" @click="changeTheme()" style="transform: scaleX(-1);" alt="">
+          </v-btn>
+
+         
         </v-col>
 
-        <v-col cols="12" md="12" class="d-block d-md-none pt-0 pa-3">
+        <!-- <v-col cols="12" class="d-block d-lg-none pt-0 pa-3">
           <v-text-field hide-details clearable class="search-bar" density="comfortable" label="جستجو..."
             variant="solo-filled" flat v-model="searchQuery">
             <template v-slot:prepend-inner>
               <img src="/icons/search-normal-1.svg"></img>
             </template>
           </v-text-field>
-        </v-col>
+        </v-col> -->
       </v-row>
     </v-app-bar>
-
-    <v-main>
+<!-- background: #1e2124; -->
+    <v-main class="main-holder" :style="`background: ${theme == 'myDark' ? '#1e2124' : '#F9FBFC' };`">
       <div style="max-width: 1400px; margin: auto;margin-bottom: 8rem">
         <NuxtPage />
       </div>
@@ -120,6 +148,25 @@
         </v-col>
       </v-row>
     </v-footer>
+
+    <v-dialog v-model="searchDialog">
+      <v-card flat class="rounding" >
+      
+        <v-text-field hide-details clearable class="search-bar rounding"  label="جستجو..."
+          variant="solo-filled" flat v-model="searchQuery">
+          <template v-slot:prepend-inner>
+            <img src="/icons/search-normal-1.svg"></img>
+          </template>
+        </v-text-field>
+
+        <div class="pa-5">
+          <v-empty-state
+            text=""
+            title="موردی پیدا نشد"
+          ></v-empty-state>
+        </div>
+      </v-card>
+    </v-dialog>
   </v-app>
 </template>
 
@@ -138,9 +185,10 @@ export default {
     return {
       searchQuery: null,
       page: "",
-      theme: "light",
       cartCount: 0,
       productList: [],
+      theme: useCookie('theme') ? useCookie('theme') : 'myDark',
+      searchDialog:false,
       searchLoading: true,
       showSideBar: false,
       icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
@@ -154,6 +202,11 @@ export default {
     }, 500);
   },
   methods: {
+    changeTheme(){
+      this.theme == 'myDark' ? this.theme = 'myLight' : this.theme = 'myDark';
+
+      useCookie('theme').value = this.theme
+    },
     scrollToTop() {
       window.scroll({
         top: 0,
@@ -174,12 +227,7 @@ a:visited {
 
 
 .foot .v-field,
-.top-menu .v-field,
-.auth .v-field {
-  border-radius: var(--border-radius-md) !important;
-}
-
-.top-menu .v-btn {
+.top-menu .v-field {
   border-radius: var(--border-radius-md) !important;
 }
 
@@ -192,7 +240,5 @@ a:visited {
   color: white !important;
 }
 
-.v-main {
-  background: #1e2124;
-}
+  
 </style>

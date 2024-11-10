@@ -76,6 +76,31 @@ body,
 
 /* search-holder */
 
+.top-menu .v-toolbar__prepend {
+    display: none;
+}
+
+.menu-item {
+    margin-right: 1rem;
+}
+
+.login-menu {
+    background-color: #4FC3F7 !important;
+}
+
+@media only screen and (max-width: 1400px) {
+
+    .mySwiper {
+        border-radius: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .top-menu .v-toolbar__prepend {
+        display: flex;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
 
     .search-holder {
@@ -85,10 +110,15 @@ body,
 
 @media only screen and (max-width: 960px) {
 
-    /* .top-menu,
+    .top-menu,
     .v-toolbar__content {
-        height: 100px !important;
-    } */
+        height: 70px !important;
+    }
+
+
+    .v-main.main-holder {
+        --v-layout-top: 70px !important;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -99,7 +129,7 @@ body,
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
 
     .logo {
         height: 52px;
@@ -229,4 +259,49 @@ label {
 
 .auth .v-field {
     border-radius: var(--border-radius-md);
+}
+
+
+
+.v-input.v-theme--myLight .v-field--variant-outlined .v-field__outline__end {
+    border-top-width: 1px;
+    border-top-color: #E0E6F2;
+    border-bottom-width: 1px;
+    border-bottom-color: #E0E6F2;
+    border-inline-end-width: 1px;
+    border-inline-end-color: #E0E6F2;
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+
+.v-input.v-theme--myLight .v-field--variant-outlined .v-field__outline__start {
+    border-top-width: 1px;
+    border-top-color: #E0E6F2;
+    border-bottom-width: 1px;
+    border-bottom-color: #E0E6F2;
+    border-inline-start-width: 1px;
+    border-inline-start-color: #E0E6F2;
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+
+
+.v-input.v-theme--myLight:hover .v-field--variant-outlined .v-field__outline__end,
+.v-input.v-theme--myLight:active .v-field--variant-outlined .v-field__outline__end,
+.v-input.v-theme--myLight:focus .v-field--variant-outlined .v-field__outline__end {
+    border-top-color: #bac0cb;
+    border-bottom-color: #bac0cb;
+    border-inline-end-color: #bac0cb;
+}
+
+.v-input.v-theme--myLight:hover .v-field--variant-outlined .v-field__outline__start,
+.v-input.v-theme--myLight:active .v-field--variant-outlined .v-field__outline__start,
+.v-input.v-theme--myLight:focus .v-field--variant-outlined .v-field__outline__start {
+    border-top-color: #bac0cb;
+    border-bottom-color: #bac0cb;
+    border-inline-start-color: #bac0cb;
+}
+
+.v-theme--myLight .v-sheet--border {
+    border: 1px solid #E0E6F2;
 }
