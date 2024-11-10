@@ -35,7 +35,7 @@
                       placeholder="Email Address"
                       flat
                       hide-details
-                      class="rounding mt-2"
+                      class="mt-2"
                       dir="ltr"
                       variant="outlined"
                     ></v-text-field>
@@ -47,7 +47,7 @@
                       dir="ltr"
                       flat
                       hide-details
-                      class="rounding mt-2"
+                      class="mt-2"
                       variant="outlined"
                     >
                       <template v-slot:append-inner></template>

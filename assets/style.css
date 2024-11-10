@@ -225,3 +225,8 @@ label {
     -webkit-line-clamp: 1;
     line-clamp: 1;
 }
+
+
+.auth .v-field {
+    border-radius: var(--border-radius-md);
+}
