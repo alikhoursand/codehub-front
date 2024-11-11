@@ -1,5 +1,5 @@
 <template>
-  <v-app :theme="theme" style="position: relative">
+  <v-app :theme="theme.value" style="position: relative">
     <v-navigation-drawer v-model="showSideBar" disable-resize-watcher>
       <v-list class="pt-0">
         <nuxt-link to="/auth">
@@ -82,18 +82,16 @@
               </template></v-btn>
           </NuxtLink>
 
-          <v-btn size="x-small" color="light-blue-lighten-2"
-            :variant="useCookie('theme').value == 'myDark' ? 'flat' : 'tonal'" icon=""
+          <v-btn size="x-small" color="light-blue-lighten-2" :variant="theme == 'myDark' ? 'flat' : 'tonal'" icon=""
             class="ml-2 mr-2 d-flex d-lg-none" rounded="xl" flat>
-            <img :src="useCookie('theme').value == 'myDark' ? '/icons/moon.svg' : '/icons/sun-1.svg'"
-              @click="changeTheme()" style="transform: scaleX(-1);" alt="">
+            <img :src="theme == 'myDark' ? '/icons/moon.svg' : '/icons/sun-1.svg'" @click="changeTheme()"
+              style="transform: scaleX(-1);" alt="">
           </v-btn>
 
-          <v-btn size="small" color="light-blue-lighten-2"
-            :variant="useCookie('theme').value == 'myDark' ? 'flat' : 'tonal'" icon=""
+          <v-btn size="small" color="light-blue-lighten-2" :variant="theme == 'myDark' ? 'flat' : 'tonal'" icon=""
             class="ml-2 mr-2 d-none d-lg-flex" rounded="xl" flat>
-            <img :src="useCookie('theme').value == 'myDark' ? '/icons/moon.svg' : '/icons/sun-1.svg'"
-              @click="changeTheme()" style="transform: scaleX(-1);" alt="">
+            <img :src="theme == 'myDark' ? '/icons/moon.svg' : '/icons/sun-1.svg'" @click="changeTheme()"
+              style="transform: scaleX(-1);" alt="">
           </v-btn>
 
 
@@ -110,7 +108,7 @@
       </v-row>
     </v-app-bar>
     <!-- background: #1e2124; -->
-    <v-main class="main-holder" :style="`background: ${useCookie('theme').value == 'myDark' ? '#1e2124' : '#F9FBFC'};`">
+    <v-main class="main-holder" :style="`background: ${theme == 'myDark' ? '#1e2124' : '#F9FBFC'};`">
       <div style="max-width: 1400px; margin: auto;margin-bottom: 8rem">
         <NuxtPage />
       </div>
@@ -173,61 +171,37 @@
   </v-app>
 </template>
 
-<script>
-export default {
+<script setup>
+const runtimeConfig = useRuntimeConfig();
+
+var currentTheme = useCookie('theme').value ? useCookie('theme').value : 'myDark'
+useCookie('theme').value = currentTheme
+
+let searchQuery = ref(null);
+let page = ref("")
+let cartCount = ref(0);
+let theme = ref(currentTheme)
+let searchDialog = ref(false)
+let searchLoading = ref(false)
+let showSideBar = ref(false)
 
 
-  setup() {
-    const runtimeConfig = useRuntimeConfig();
-
-    if (!useCookie('theme').value) {
-      useCookie('theme').value = 'myDark'
-    }
 
 
-    return { runtimeConfig };
-  },
-  watch: {
-    $route(route) {
-      this.page = route.name;
-    },
-  },
-  data() {
-    return {
-      searchQuery: null,
-      page: "",
-      cartCount: 0,
-      productList: [],
-      theme: useCookie('theme').value,
-      searchDialog: false,
-      searchLoading: true,
-      showSideBar: false,
-      icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
-    };
-  },
-  components: {},
+function changeTheme() {
+  theme.value == 'myDark' ? theme.value = 'myLight' : theme.value = 'myDark';
+  useCookie('theme').value = theme.value
+}
 
-  mounted() {
-    setTimeout(() => {
-      this.page = this.$route.name;
-    }, 500);
-  },
-  methods: {
-    changeTheme() {
-      this.theme == 'myDark' ? this.theme = 'myLight' : this.theme = 'myDark';
-
-      useCookie('theme').value = this.theme
-    },
-    scrollToTop() {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-    },
-  },
-};
+function scrollToTop() {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+}
 </script>
+
 
 <style>
 a:link,
