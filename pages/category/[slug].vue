@@ -175,7 +175,7 @@
                           <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                         </div>
                         <div>
-                          <v-btn flat :color="useCookie('theme').value == 'myDark' ? '#1e2124' : '#F9FBFC'"
+                          <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
                             :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
                             height="40" text="160">
                             <template v-slot:prepend>
@@ -183,7 +183,7 @@
                             </template>
                           </v-btn>
 
-                          <v-btn flat :color="useCookie('theme').value == 'myDark' ? '#1e2124' : '#F9FBFC'"
+                          <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
                             :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
                             size="small" height="40">
                             <img src="/icons/save-2.svg" alt="" />
@@ -198,7 +198,7 @@
                     <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                   </div>
                   <div>
-                    <v-btn flat :color="useCookie('theme').value == 'myDark' ? '#1e2124' : '#F9FBFC'"
+                    <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
                       :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
                       height="40" text="160">
                       <template v-slot:prepend>
@@ -206,7 +206,7 @@
                       </template>
                     </v-btn>
 
-                    <v-btn flat :color="useCookie('theme').value == 'myDark' ? '#1e2124' : '#F9FBFC'"
+                    <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
                       :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
                       size="small" height="40">
                       <img src="/icons/save-2.svg" alt="" />
@@ -233,7 +233,7 @@
               <div class="mt-8 d-flex justify-space-between  align-center">
                 <div class="d-block d-sm-none"></div>
                 <div class="d-flex align-center">
-                  <v-btn flat :color="useCookie('theme').value == 'myDark' ? '#1e2124' : '#F9FBFC'"
+                  <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
                     :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 counter-btn']"
                     height="40" text="4">
                     <template v-slot:prepend>

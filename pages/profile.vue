@@ -2,7 +2,7 @@
   <div class="mt-5">
     <v-row class="ma-0 justify-end">
       <v-col cols="12" lg="3" class="pt-0 order-lg-1 order-2 d-none d-lg-block">
-        <v-sheet class="py-3 rounding">
+        <v-sheet :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'py-3 rounding']">
           <v-list lines="two">
             <v-list-item>
               <template v-slot:prepend>
@@ -54,7 +54,9 @@
       </v-col>
       <v-col cols="12" lg="9" class="pt-0 order-lg-2 order-1 ">
         <v-sheet class="rounding pa-3" flat>
-          <v-sheet class="light-bg bg-holder rounding " height="250" elevation="2">
+          <v-sheet
+            :class="[useCookie('theme').value == 'myLight' ? 'has-shadow' : 'no-shadow light-bg', ' bg-holder rounding']"
+            height="250" flat>
             <img src="/icons/gallery-add.svg" class="add-img-icon" width="27" height="27" alt="">
             <!-- <v-icon icon="mdi-image-plus" size="x-large" class="add-img-icon" color="light-blue-lighten-2"></v-icon> -->
 
@@ -62,7 +64,9 @@
             <div class="editprofile-av-img">
               <!-- <v-img :eager="true" rounded="circle" class="mx-auto editprofile-avatar" cover
                 src="https://picsum.photos/250/300?image=100" :aspect-ratio="1 / 1" width="180"></v-img> -->
-              <div class="editprofile-avatar d-flex justify-center align-center light-bg alter">
+              <div
+                :class="[useCookie('theme').value == 'myLight' ? 'has-shadow bg-white' : 'no-shadow light-bg', 'editprofile-avatar d-flex justify-center align-center  alter']"
+                :style="useCookie('theme').value == 'myLight' ? 'border: 12px solid rgba(255,255,255,0);' : 'border: 12px solid #14161a;'">
                 <!-- <v-icon icon="mdi-image-plus" size="x-large" color="light-blue-lighten-2"></v-icon> -->
                 <img src="/icons/gallery-add.svg" width="27" height="27" alt="">
               </div>

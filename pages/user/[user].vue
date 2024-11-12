@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mt-5 px-3">
-      <v-sheet flat class="profile-container">
+      <v-sheet flat :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'profile-container']">
         <div>
           <v-img height="300" class="profile-img" cover src="/images/code-bg.jpg"></v-img>
         </div>
@@ -19,14 +19,15 @@
                 </div>
               </div>
               <div class="pa-5 pr-3 mt-10 mr-5">
-                <v-btn text="دنبال کردن" color="light-blue-lighten-2  rounded-btn" size="x-large"></v-btn>
+                <v-btn text="دنبال کردن" flat color="light-blue-lighten-2  rounded-btn" size="x-large"></v-btn>
               </div>
             </v-col>
             <v-col cols="12" md="4" class="">
               <div class="av-holder">
                 <div class="profile-av-img">
-                  <v-img :eager="true" rounded="circle" class="mx-auto profile-avatar" cover
-                    src="https://picsum.photos/250/300?image=100" :aspect-ratio="1 / 1" width="180"></v-img>
+                  <v-img :eager="true" rounded="circle" class="mx-auto profile-avatar"
+                    :style="useCookie('theme').value == 'myLight' ? 'border: 12px solid #F9FBFC;' : 'border: 12px solid #14161a;'"
+                    cover src="https://picsum.photos/250/300?image=100" :aspect-ratio="1 / 1" width="180"></v-img>
                 </div>
                 <div class="text-center text-h4">آریا ملکی</div>
                 <div class="text-center mt-3 text-light-blue-lighten-2" dir="ltr">
@@ -46,11 +47,14 @@
                 <div class="text-left pl-5">
 
 
-                  <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 counter-btn" size="small" height="40">
+                  <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                    :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 counter-btn']"
+                    size="small" height="40">
                     <img src="/icons/send-square.svg" alt="">
                   </v-btn>
-                  <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
-                    height="40">
+                  <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                    :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
+                    size="small" height="40">
                     <img src="/icons/more-square.svg" alt="">
                   </v-btn>
 
@@ -84,10 +88,14 @@
                 </div>
               </div>
               <div class="text-left mt-8">
-                <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 counter-btn" size="small" height="40">
+                <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                  :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 counter-btn']"
+                  size="small" height="40">
                   <img src="/icons/send-square.svg" alt="">
                 </v-btn>
-                <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small" height="40">
+                <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                  :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
+                  size="small" height="40">
                   <img src="/icons/more-square.svg" alt="">
                 </v-btn>
               </div>
@@ -102,17 +110,20 @@
         <div class="btn-gp">
           <v-slide-group v-model="selectedButton" mandatory show-arrows max-width="750">
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+              <v-btn size="large" flat rounded="lg" height="55"
+                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
                 text="درباره کاربر" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+              <v-btn size="large" flat rounded="lg" height="55"
+                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
                 text="پرسش های کاربر" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+              <v-btn size="large" flat rounded="lg" height="55"
+                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
                 text="پاسخ های کاربر" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
@@ -121,7 +132,8 @@
 
         <v-window v-model="selectedSection">
           <v-window-item :value="0">
-            <v-card flat class="rounding mt-15 pa-md-7 pa-3">
+            <v-card flat
+              :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'rounding mt-15 pa-md-7 pa-3']">
               <div><span class="text-h6">درباره کاربر</span></div>
               <div class="mt-5 text-justify">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
@@ -139,7 +151,9 @@
           </v-window-item>
           <v-window-item :value="1">
             <div class="mt-15 px-3">
-              <v-card elevation="0" class="question-card" v-for="q in 3" :key="q">
+              <v-card elevation="0"
+                :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'question-card']"
+                v-for="q in 3" :key="q">
                 <div class="pa-md-10 pa-3">
                   <div class="d-flex justify-space-between align-center">
                     <div class="d-flex align-center">
@@ -165,14 +179,16 @@
                               <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                             </div>
                             <div>
-                              <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
-                                text="160">
+                              <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                                :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
+                                height="40" text="160">
                                 <template v-slot:prepend>
                                   <img src="/icons/eye.svg" alt="" />
                                 </template>
                               </v-btn>
 
-                              <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn"
+                              <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                                :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
                                 size="small" height="40">
                                 <img src="/icons/save-2.svg" alt="" />
                               </v-btn>
@@ -186,15 +202,17 @@
                         <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                       </div>
                       <div>
-                        <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
-                          text="160">
+                        <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                          :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
+                          height="40" text="160">
                           <template v-slot:prepend>
                             <img src="/icons/eye.svg" alt="" />
                           </template>
                         </v-btn>
 
-                        <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
-                          height="40">
+                        <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                          :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
+                          size="small" height="40">
                           <img src="/icons/save-2.svg" alt="" />
                         </v-btn>
                       </div>
@@ -223,25 +241,32 @@
                   <div class="mt-8 d-flex justify-space-between align-center">
                     <div class="d-block d-sm-none"></div>
                     <div class="d-flex align-center">
-                      <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 counter-btn" height="40" text="4">
+                      <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                        :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 counter-btn']"
+                        height="40" text="4">
                         <template v-slot:prepend>
                           <img src="/icons/messages-2.svg" alt="" />
                         </template>
                       </v-btn>
                     </div>
                     <div class="d-none d-sm-block">
-                      <v-btn text="پاسخ" class="reply-btn" size="x-large" variant="outlined"
-                        color="light-blue-lighten-2">
+                      <v-btn text="پاسخ" :class="[useCookie('theme').value == 'myLight' ? 'tonal-bg' : '', 'reply-btn']"
+                        size="x-large" variant="outlined" color="light-blue-lighten-2">
                         <template v-slot:append>
-                          <img src="/icons/reply-fill.svg" width="24" height="24" alt="" />
+                          <img
+                            :src="useCookie('theme').value == 'myDark' ? '/icons/reply-fill.svg' : '/icons/reply-outline.svg'"
+                            width="24" height="24" alt="">
                         </template>
                       </v-btn>
                     </div>
                   </div>
-                  <v-btn text="پاسخ" class="reply-btn mt-8 d-flex d-sm-none" block size="x-large" variant="outlined"
-                    color="light-blue-lighten-2">
+                  <v-btn text="پاسخ"
+                    :class="[useCookie('theme').value == 'myLight' ? 'tonal-bg' : '', 'reply-btn mt-8 d-flex d-sm-none']"
+                    block size="x-large" variant="outlined" color="light-blue-lighten-2">
                     <template v-slot:append>
-                      <img src="/icons/reply-fill.svg" width="24" height="24" alt="" />
+                      <img
+                        :src="useCookie('theme').value == 'myDark' ? '/icons/reply-fill.svg' : '/icons/reply-outline.svg'"
+                        width="24" height="24" alt="">
                     </template>
                   </v-btn>
                 </div>
@@ -250,14 +275,18 @@
           </v-window-item>
           <v-window-item :value="2">
             <div class="mt-15 px-3">
-              <v-card v-for="a in 3" :key="a" elevation="0" class="question-card">
-                <div class="light-bg px-md-10 px-3 py-5">
+              <v-card v-for="a in 3" :key="a" elevation="0"
+                :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'question-card']">
+                <div :class="[useCookie('theme').value == 'myLight' ? 'lighter-bg' : 'light-bg', 'px-md-10 px-3 py-5']">
                   <div class="right-border pr-3">
                     <div class="text-body-1 font-weight-medium d-flex align-center">
-                      <div class="ml-3">یوزر ۱</div>
+                      <div class="ml-3"
+                        :style="`color:${useCookie('theme').value == 'myLight' ? '#000000DE' : '#EBEBEB'}`">یوزر ۱
+                      </div>
                       <div dir="ltr" class="text-light-blue-lighten-2">@user1</div>
                     </div>
-                    <div class="text-body-2 mt-3 rep-ans">
+                    <div class="text-body-2 mt-3 rep-ans"
+                      :style="`color:${useCookie('theme').value == 'myLight' ? '#000000DE' : '#EBEBEB'}`">
                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                       استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
                       ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
@@ -289,7 +318,8 @@
                               <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                             </div>
                             <div>
-                              <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn"
+                              <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                                :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
                                 size="small" height="40">
                                 <img src="/icons/copy.svg" width="24" height="24" alt="" />
                               </v-btn>
@@ -303,8 +333,9 @@
                         <span class=" text-body-2 text-medium-emphasis">2 ساعت پیش</span>
                       </div>
                       <div>
-                        <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" size="small"
-                          height="40">
+                        <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                          :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
+                          size="small" height="40">
                           <img src="/icons/copy.svg" width="24" height="24" alt="" />
                         </v-btn>
                       </div>
@@ -326,29 +357,36 @@
                   <div class="mt-8 d-flex justify-space-between align-center">
                     <div class="d-block d-sm-none"></div>
                     <div class="d-flex align-center">
-                      <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 counter-btn" height="40"
-                        text="1 پاسخ"></v-btn>
+                      <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                        :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 counter-btn']"
+                        height="40" text="1 پاسخ"></v-btn>
 
-                      <v-btn flat color="#1e2124" class="text-light-blue-lighten-2 mr-2 counter-btn" height="40"
-                        text="3">
+                      <v-btn flat :color="useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'"
+                        :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'text-light-blue-lighten-2 mr-2 counter-btn']"
+                        height="40" text="3">
                         <template v-slot:prepend>
                           <img src="/icons/heart.svg" width="24" height="24" alt="" />
                         </template>
                       </v-btn>
                     </div>
                     <div class="d-none d-sm-block">
-                      <v-btn text="پاسخ" class="reply-btn" size="x-large" variant="outlined"
-                        color="light-blue-lighten-2">
+                      <v-btn text="پاسخ" :class="[useCookie('theme').value == 'myLight' ? 'tonal-bg' : '', 'reply-btn']"
+                        size="x-large" variant="outlined" color="light-blue-lighten-2">
                         <template v-slot:append>
-                          <img src="/icons/reply-fill.svg" width="24" height="24" alt="" />
+                          <img
+                            :src="useCookie('theme').value == 'myDark' ? '/icons/reply-fill.svg' : '/icons/reply-outline.svg'"
+                            width="24" height="24" alt="">
                         </template>
                       </v-btn>
                     </div>
                   </div>
-                  <v-btn text="پاسخ" class="reply-btn mt-8 d-flex d-sm-none" block size="x-large" variant="outlined"
-                    color="light-blue-lighten-2">
+                  <v-btn text="پاسخ"
+                    :class="[useCookie('theme').value == 'myLight' ? 'tonal-bg' : '', 'reply-btn mt-8 d-flex d-sm-none']"
+                    block size="x-large" variant="outlined" color="light-blue-lighten-2">
                     <template v-slot:append>
-                      <img src="/icons/reply-fill.svg" width="24" height="24" alt="" />
+                      <img
+                        :src="useCookie('theme').value == 'myDark' ? '/icons/reply-fill.svg' : '/icons/reply-outline.svg'"
+                        width="24" height="24" alt="">
                     </template>
                   </v-btn>
                 </div>

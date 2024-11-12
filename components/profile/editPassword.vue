@@ -1,10 +1,11 @@
 <template>
   <div>
-    <div class=" editprofile-holder">
+    <div class=" editprofile-holder mt-5">
       <div class="">
         <h5 class="text-h5 font-weight-bold">تغییر رمز عبور</h5>
       </div>
-      <v-sheet class="mt-5 pa-0 pa-lg-5 py-3  rounding">
+      <v-sheet
+        :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'mt-5 pa-0 pa-lg-5 py-3  rounding']">
         <v-row class="ma-0">
 
           <v-col cols="12" lg="6">

@@ -1,10 +1,12 @@
 <template>
   <div>
     <div class=" editprofile-holder">
-      <v-sheet class="mt-5 rounding pa-0 py-3 pa-lg-8">
+      <v-sheet
+        :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'mt-5 rounding pa-0 py-3 pa-lg-8']">
         <v-row class="ma-0">
           <v-col cols="12" lg="6">
-            <label for="" class="text-h6">نام و نام خانوادگی (به فارسی)</label>
+            <label for="" :class="['text-h6']">نام و نام
+              خانوادگی (به فارسی)</label>
             <v-text-field placeholder="نام و نام خانوادگی" flat hide-details class="rounding mt-2"
               variant="outlined"></v-text-field>
           </v-col>
@@ -39,7 +41,8 @@
       <div class="mt-15">
         <h5 class="text-h5 font-weight-bold">اطلاعات شخصی</h5>
       </div>
-      <v-sheet class="mt-5 pa-0 pa-lg-5 py-3  rounding">
+      <v-sheet
+        :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'mt-5 pa-0 pa-lg-5 py-3  rounding']">
         <v-row class="ma-0">
           <v-col cols="12" lg="6">
             <label for="" class="text-h6">تاریخ تولد</label>
@@ -72,14 +75,15 @@
       <div class="mt-15">
         <h5 class="text-h5 font-weight-bold">اطلاعات تماس</h5>
       </div>
-      <v-sheet class="mt-5 pa-0 pa-lg-5 py-3  rounding">
+      <v-sheet
+        :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'mt-5 pa-0 pa-lg-5 py-3  rounding']">
         <v-row class="ma-0">
           <v-col cols="12" lg="6">
             <label for="" class="text-h6">شماره موبایل</label>
             <v-text-field type="number" placeholder="" dir="ltr" flat hide-details class="rounding mt-2"
               variant="outlined">
               <template v-slot:append-inner>
-                <div class="d-flex align-center pl-2" style="width: 80px;">
+                <div class="d-flex align-center pl-2" style="width: 90px;">
                   <span class="ml-2 text-disabled" dir="ltr">+98 - </span>
                   <img src="/public/icons/flag.svg" alt="">
                 </div>
