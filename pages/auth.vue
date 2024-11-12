@@ -113,8 +113,7 @@
                   </v-text-field>
 
                   <label for="" class="d-block mt-5">نام و نام خانوادگی (به فارسی)</label>
-                  <v-text-field placeholder="نام و نام خانوادگی" flat hide-details class="rounding mt-2"
-                    variant="outlined"></v-text-field>
+                  <v-text-field flat hide-details class="rounding mt-2" variant="outlined"></v-text-field>
 
                   <div class="mt-8 text-center">
                     <v-btn color="light-blue-lighten-2" flat text="ثبت نام" size="x-large" density="comfortable"
