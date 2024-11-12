@@ -2,7 +2,7 @@
   <NuxtLayout name="404">
     <v-responsive>
       <v-app :theme="theme">
-        <v-main :style="`background: ${theme == 'myDark' ? '#1e2124' : '#F9FBFC'};`">
+        <v-main :style="`background: ${theme == 'myLight' ? '#F9FBFC' : '#1e2124'};`">
           <div
             :class="[useCookie('theme').value == 'myLight' ? 'text-black' : 'text-white', 'd-flex justify-center align-center h-100']">
             <div class="text-center">

@@ -256,7 +256,7 @@
                     variant="outlined">
                     <template v-slot:append>
                       <img
-                        :src="useCookie('theme').value == 'myDark' ? '/icons/reply-fill.svg' : '/icons/reply-outline.svg'"
+                        :src="useCookie('theme').value == 'myLight' ? '/icons/reply-outline.svg' : '/icons/reply-fill.svg'"
                         width="24" height="24" alt="">
                     </template>
                   </v-btn>
@@ -268,7 +268,7 @@
                 block size="x-large" variant="outlined">
                 <template v-slot:append>
                   <img
-                    :src="useCookie('theme').value == 'myDark' ? '/icons/reply-fill.svg' : '/icons/reply-outline.svg'"
+                    :src="useCookie('theme').value == 'myLight' ? '/icons/reply-outline.svg' : '/icons/reply-fill.svg'"
                     width="24" height="24" alt="">
                 </template>
               </v-btn>

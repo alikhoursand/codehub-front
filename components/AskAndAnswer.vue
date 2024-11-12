@@ -8,25 +8,25 @@
           <v-slide-group v-model="selectedCategory" mandatory show-arrows max-width="750">
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat height="55"
-                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
+                :color="isSelected ? useCookie('theme').value == 'myLight' ? '#EDF9FF' : '#14161a' : undefined"
                 text="همه سوالات" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat height="55"
-                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
+                :color="isSelected ? useCookie('theme').value == 'myLight' ? '#EDF9FF' : '#14161a' : undefined"
                 text="گفتگو های خصوصی" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat height="55"
-                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
+                :color="isSelected ? useCookie('theme').value == 'myLight' ? '#EDF9FF' : '#14161a' : undefined"
                 text="پرسش های حل شده" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat height="55"
-                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
+                :color="isSelected ? useCookie('theme').value == 'myLight' ? '#EDF9FF' : '#14161a' : undefined"
                 text="پرسش های بدون پاسخ" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>

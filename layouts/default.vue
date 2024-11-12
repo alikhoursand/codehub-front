@@ -33,9 +33,9 @@
           <v-switch hide-details v-model="themeValue" inset color="light-blue-lighten-2">
 
             <template v-slot:label>
-              <img :src="theme == 'myDark' ? '/icons/moon-blue.svg' : '/icons/sun-1.svg'" @click="changeTheme()"
+              <img :src="theme == 'myLight' ? '/icons/sun-1.svg' : '/icons/moon-blue.svg'" @click="changeTheme()"
                 style="transform: scaleX(-1);" class="ml-2" alt="">
-              <span>{{ theme == 'myDark' ? 'دارک مود' : 'لایت مود' }}</span>
+              <span>{{ theme == 'myLight' ? 'لایت مود' : 'دارک مود' }}</span>
             </template>
           </v-switch>
         </div>
@@ -103,9 +103,9 @@
               style="transform: scaleX(-1);" alt="">
           </v-btn> -->
 
-          <v-btn size="small" color="light-blue-lighten-2" :variant="theme == 'myDark' ? 'flat' : 'tonal'" icon=""
+          <v-btn size="small" color="light-blue-lighten-2" :variant="theme == 'myLight' ? 'tonal' : 'flat'" icon=""
             class="ml-2 mr-2 d-none d-lg-flex" rounded="xl" flat>
-            <img :src="theme == 'myDark' ? '/icons/moon.svg' : '/icons/sun-1.svg'" @click="changeTheme()"
+            <img :src="theme == 'myLight' ? '/icons/sun-1.svg' : '/icons/moon.svg'" @click="changeTheme()"
               style="transform: scaleX(-1);" alt="">
           </v-btn>
 
@@ -123,7 +123,7 @@
       </v-row>
     </v-app-bar>
     <!-- background: #1e2124; -->
-    <v-main class="main-holder" :style="`background: ${theme == 'myDark' ? '#1e2124' : '#F9FBFC'};`">
+    <v-main class="main-holder" :style="`background: ${theme == 'myLight' ? '#F9FBFC' : '#1e2124'};`">
       <div style="max-width: 1400px; margin: auto;margin-bottom: 8rem">
         <NuxtPage />
       </div>
@@ -212,7 +212,7 @@ watch(themeValue, async () => {
 
 
 function changeTheme() {
-  theme.value == 'myDark' ? theme.value = 'myLight' : theme.value = 'myDark';
+  theme.value == 'myLight' ? theme.value = 'myDark' : theme.value = 'myLight';
   useCookie('theme').value = theme.value
 }
 

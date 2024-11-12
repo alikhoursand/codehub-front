@@ -111,19 +111,19 @@
           <v-slide-group v-model="selectedButton" mandatory show-arrows max-width="750">
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat rounded="lg" height="55"
-                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
+                :color="isSelected ? useCookie('theme').value == 'myLight' ? '#EDF9FF' : '#14161a' : undefined"
                 text="درباره کاربر" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat rounded="lg" height="55"
-                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
+                :color="isSelected ? useCookie('theme').value == 'myLight' ? '#EDF9FF' : '#14161a' : undefined"
                 text="پرسش های کاربر" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
               <v-btn size="large" flat rounded="lg" height="55"
-                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
+                :color="isSelected ? useCookie('theme').value == 'myLight' ? '#EDF9FF' : '#14161a' : undefined"
                 text="پاسخ های کاربر" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
@@ -254,7 +254,7 @@
                         size="x-large" variant="outlined" color="light-blue-lighten-2">
                         <template v-slot:append>
                           <img
-                            :src="useCookie('theme').value == 'myDark' ? '/icons/reply-fill.svg' : '/icons/reply-outline.svg'"
+                            :src="useCookie('theme').value == 'myLight' ? '/icons/reply-outline.svg' : '/icons/reply-fill.svg'"
                             width="24" height="24" alt="">
                         </template>
                       </v-btn>
@@ -265,7 +265,7 @@
                     block size="x-large" variant="outlined" color="light-blue-lighten-2">
                     <template v-slot:append>
                       <img
-                        :src="useCookie('theme').value == 'myDark' ? '/icons/reply-fill.svg' : '/icons/reply-outline.svg'"
+                        :src="useCookie('theme').value == 'myLight' ? '/icons/reply-outline.svg' : '/icons/reply-fill.svg'"
                         width="24" height="24" alt="">
                     </template>
                   </v-btn>
@@ -374,7 +374,7 @@
                         size="x-large" variant="outlined" color="light-blue-lighten-2">
                         <template v-slot:append>
                           <img
-                            :src="useCookie('theme').value == 'myDark' ? '/icons/reply-fill.svg' : '/icons/reply-outline.svg'"
+                            :src="useCookie('theme').value == 'myLight' ? '/icons/reply-outline.svg' : '/icons/reply-fill.svg'"
                             width="24" height="24" alt="">
                         </template>
                       </v-btn>
@@ -385,7 +385,7 @@
                     block size="x-large" variant="outlined" color="light-blue-lighten-2">
                     <template v-slot:append>
                       <img
-                        :src="useCookie('theme').value == 'myDark' ? '/icons/reply-fill.svg' : '/icons/reply-outline.svg'"
+                        :src="useCookie('theme').value == 'myLight' ? '/icons/reply-outline.svg' : '/icons/reply-fill.svg'"
                         width="24" height="24" alt="">
                     </template>
                   </v-btn>

@@ -1,28 +1,17 @@
 <template>
   <v-responsive>
     <v-app :theme="theme">
-      <v-main
-        class=""
-        :style="`background: ${theme == 'myDark' ? '#1e2124' : '#F9FBFC'};`"
-      >
+      <v-main class="" :style="`background: ${useCookie('theme').value == 'myLight' ? '#F9FBFC' : '#1e2124'};`">
         <v-row class="justify-center py-5 h-100">
           <v-col cols="12" lg="5" class="align-self-center">
             <div class="d-block d-lg-none">
               <img src="/images/logo.svg" class="d-block mx-auto mt-5 mb-10" alt="" />
             </div>
-            <v-sheet
-              :border="theme == 'myDark' ? '0' : true"
-              max-width="500"
-              width="100%"
-              class="mx-auto rounding pa-5 px-md-13 py-md-5 auth pt-3"
-              elevation="0"
-            >
-              <v-tabs
-                v-model="tab"
-                selected-class="text-light-blue-lighten-2"
-                slider-color="light-blue-lighten-2"
-                fixed-tabs
-              >
+            <v-sheet max-width="500" width="100%"
+              :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'mx-auto rounding pa-5 px-md-13 py-md-5 auth pt-3']"
+              elevation="0">
+              <v-tabs v-model="tab" selected-class="text-light-blue-lighten-2" slider-color="light-blue-lighten-2"
+                fixed-tabs>
                 <v-tab value="login" :ripple="false">
                   <div class="text-h5 py-3">ورود</div>
                 </v-tab>
@@ -33,93 +22,38 @@
               <v-tabs-window class="mt-5" v-model="tab">
                 <v-tabs-window-item value="login">
                   <label for="" class="d-block mt-5">ایمیل</label>
-                  <v-text-field
-                    placeholder="Email Address"
-                    flat
-                    hide-details
-                    class="mt-2"
-                    dir="ltr"
-                    variant="outlined"
-                  ></v-text-field>
+                  <v-text-field placeholder="Email Address" flat hide-details class="mt-2" dir="ltr"
+                    variant="outlined"></v-text-field>
 
                   <label for="" class="d-block mt-5">رمز عبور</label>
-                  <v-text-field
-                    :type="visible3 ? 'text' : 'password'"
-                    placeholder=""
-                    dir="ltr"
-                    flat
-                    hide-details
-                    class="mt-2"
-                    variant="outlined"
-                  >
+                  <v-text-field :type="visible3 ? 'text' : 'password'" placeholder="" dir="ltr" flat hide-details
+                    class="mt-2" variant="outlined">
                     <template v-slot:append-inner></template>
                     <template v-slot:prepend-inner>
-                      <img
-                        src="/icons/eye-dark.svg"
-                        class="eye"
-                        @click="visible3 = false"
-                        v-if="visible3"
-                        alt=""
-                      />
-                      <img
-                        src="/icons/eye-slash.svg"
-                        class="eye"
-                        @click="visible3 = true"
-                        v-else
-                        alt=""
-                      />
+                      <img src="/icons/eye-dark.svg" class="eye" @click="visible3 = false" v-if="visible3" alt="" />
+                      <img src="/icons/eye-slash.svg" class="eye" @click="visible3 = true" v-else alt="" />
                     </template>
                   </v-text-field>
 
                   <div class="mt-8 text-center">
                     <div class="d-none d-md-block">
-                      <v-btn
-                        color="light-blue-lighten-2"
-                        flat
-                        text="ورود"
-                        size="x-large"
-                        density="comfortable"
-                        max-width="200"
-                        width="100%"
-                        class="rounding"
-                      ></v-btn>
+                      <v-btn color="light-blue-lighten-2" flat text="ورود" size="x-large" density="comfortable"
+                        max-width="200" width="100%" class="rounding"></v-btn>
                     </div>
 
                     <div class="d-block d-md-none">
-                      <v-btn
-                        color="light-blue-lighten-2"
-                        flat
-                        block
-                        text="ورود"
-                        size="x-large"
-                        density="comfortable"
-                        class="rounding"
-                      ></v-btn>
+                      <v-btn color="light-blue-lighten-2" flat block text="ورود" size="x-large" density="comfortable"
+                        class="rounding"></v-btn>
                     </div>
 
                     <div class="d-none d-md-block">
-                      <v-btn
-                        color="light-blue-lighten-2"
-                        flat
-                        text="ورود با رمز یکبار مصرف"
-                        variant="outlined"
-                        size="large"
-                        max-width="200"
-                        width="100%"
-                        class="mt-5 rounding"
-                      ></v-btn>
+                      <v-btn color="light-blue-lighten-2" flat text="ورود با رمز یکبار مصرف" variant="outlined"
+                        size="large" max-width="200" width="100%" class="mt-5 rounding"></v-btn>
                     </div>
 
                     <div class="d-block d-md-none">
-                      <v-btn
-                        color="light-blue-lighten-2"
-                        block
-                        flat
-                        text="ورود با رمز یکبار مصرف"
-                        variant="outlined"
-                        size="large"
-                        class="mt-5 rounding"
-                      ></v-btn>
+                      <v-btn color="light-blue-lighten-2" block flat text="ورود با رمز یکبار مصرف" variant="outlined"
+                        size="large" class="mt-5 rounding"></v-btn>
                     </div>
                   </div>
 
@@ -131,15 +65,9 @@
 
                   <v-row class="justify-space-between align-center">
                     <v-col cols="12" sm="6">
-                      <v-btn
-                        flat
-                        variant="outlined"
-                        size="large"
-                        color="light-blue-lighten-2"
-                        block
-                        class="rounding text-body-2 third-party-btn"
-                      >
-                        <span :class="theme == 'myDark' ? 'text-white' : 'text-black'">
+                      <v-btn flat variant="outlined" size="large" color="light-blue-lighten-2" block
+                        class="rounding text-body-2 third-party-btn">
+                        <span :class="useCookie('theme').value == 'myLight' ? 'text-black' : 'text-white'">
                           ورود با گوگل
                         </span>
                         <template v-slot:prepend>
@@ -148,15 +76,9 @@
                       </v-btn>
                     </v-col>
                     <v-col cols="12" sm="6">
-                      <v-btn
-                        flat
-                        variant="outlined"
-                        size="large"
-                        color="light-blue-lighten-2"
-                        block
-                        class="rounding text-body-2 third-party-btn"
-                      >
-                        <span :class="theme == 'myDark' ? 'text-white' : 'text-black'">
+                      <v-btn flat variant="outlined" size="large" color="light-blue-lighten-2" block
+                        class="rounding text-body-2 third-party-btn">
+                        <span :class="useCookie('theme').value == 'myLight' ? 'text-black' : 'text-white'">
                           ورود با گیت هاب
                         </span>
                         <template v-slot:prepend>
@@ -169,103 +91,39 @@
 
                 <v-tabs-window-item value="register">
                   <label for="" class="d-block mt-5">ایمیل</label>
-                  <v-text-field
-                    placeholder="Email Address"
-                    flat
-                    hide-details
-                    class="rounding mt-2"
-                    dir="ltr"
-                    variant="outlined"
-                  ></v-text-field>
+                  <v-text-field placeholder="Email Address" flat hide-details class="rounding mt-2" dir="ltr"
+                    variant="outlined"></v-text-field>
 
                   <label for="" class="d-block mt-5">رمز عبور</label>
-                  <v-text-field
-                    :type="visible ? 'text' : 'password'"
-                    placeholder=""
-                    flat
-                    hide-details
-                    dir="ltr"
-                    class="rounding mt-2"
-                    variant="outlined"
-                  >
+                  <v-text-field :type="visible ? 'text' : 'password'" placeholder="" flat hide-details dir="ltr"
+                    class="rounding mt-2" variant="outlined">
                     <template v-slot:append-inner></template>
                     <template v-slot:prepend-inner>
-                      <img
-                        src="/icons/eye-dark.svg"
-                        class="eye"
-                        @click="visible = false"
-                        v-if="visible"
-                        alt=""
-                      />
-                      <img
-                        src="/icons/eye-slash.svg"
-                        class="eye"
-                        @click="visible = true"
-                        v-else
-                        alt=""
-                      />
+                      <img src="/icons/eye-dark.svg" class="eye" @click="visible = false" v-if="visible" alt="" />
+                      <img src="/icons/eye-slash.svg" class="eye" @click="visible = true" v-else alt="" />
                     </template>
                   </v-text-field>
 
                   <label for="" class="d-block mt-5">تکرار رمز عبور</label>
-                  <v-text-field
-                    :type="visible2 ? 'text' : 'password'"
-                    placeholder=""
-                    flat
-                    hide-details
-                    class="rounding mt-2"
-                    variant="outlined"
-                    dir="ltr"
-                  >
+                  <v-text-field :type="visible2 ? 'text' : 'password'" placeholder="" flat hide-details
+                    class="rounding mt-2" variant="outlined" dir="ltr">
                     <template v-slot:append-inner></template>
                     <template v-slot:prepend-inner>
-                      <img
-                        src="/icons/eye-dark.svg"
-                        class="eye"
-                        @click="visible2 = false"
-                        v-if="visible2"
-                        alt=""
-                      />
-                      <img
-                        src="/icons/eye-slash.svg"
-                        class="eye"
-                        @click="visible2 = true"
-                        v-else
-                        alt=""
-                      />
+                      <img src="/icons/eye-dark.svg" class="eye" @click="visible2 = false" v-if="visible2" alt="" />
+                      <img src="/icons/eye-slash.svg" class="eye" @click="visible2 = true" v-else alt="" />
                     </template>
                   </v-text-field>
 
                   <label for="" class="d-block mt-5">نام و نام خانوادگی (به فارسی)</label>
-                  <v-text-field
-                    placeholder="نام و نام خانوادگی"
-                    flat
-                    hide-details
-                    class="rounding mt-2"
-                    variant="outlined"
-                  ></v-text-field>
+                  <v-text-field placeholder="نام و نام خانوادگی" flat hide-details class="rounding mt-2"
+                    variant="outlined"></v-text-field>
 
                   <div class="mt-8 text-center">
-                    <v-btn
-                      color="light-blue-lighten-2"
-                      flat
-                      text="ثبت نام"
-                      size="x-large"
-                      density="comfortable"
-                      max-width="200"
-                      width="100%"
-                      class="d-none mx-auto d-md-flex rounding"
-                    ></v-btn>
+                    <v-btn color="light-blue-lighten-2" flat text="ثبت نام" size="x-large" density="comfortable"
+                      max-width="200" width="100%" class="d-none mx-auto d-md-flex rounding"></v-btn>
 
-                    <v-btn
-                      color="light-blue-lighten-2"
-                      flat
-                      text="ثبت نام"
-                      size="x-large"
-                      density="comfortable"
-                      block
-                      class="d-flex d-md-none rounding"
-                    ></v-btn>
+                    <v-btn color="light-blue-lighten-2" flat text="ثبت نام" size="x-large" density="comfortable" block
+                      class="d-flex d-md-none rounding"></v-btn>
                   </div>
 
                   <div class="d-flex align-center my-10">
@@ -276,15 +134,9 @@
 
                   <v-row class="justify-space-between align-center">
                     <v-col cols="12" sm="6">
-                      <v-btn
-                        flat
-                        variant="outlined"
-                        size="large"
-                        color="light-blue-lighten-2"
-                        block
-                        class="rounding text-body-2 text-white third-party-btn"
-                      >
-                        <span :class="theme == 'myDark' ? 'text-white' : 'text-black'">
+                      <v-btn flat variant="outlined" size="large" color="light-blue-lighten-2" block
+                        class="rounding text-body-2 text-white third-party-btn">
+                        <span :class="useCookie('theme').value == 'myLight' ? 'text-black' : 'text-white'">
                           ثبت نام با گوگل
                         </span>
                         <template v-slot:prepend>
@@ -293,16 +145,9 @@
                       </v-btn>
                     </v-col>
                     <v-col cols="12" sm="6">
-                      <v-btn
-                        flat
-                        variant="outlined"
-                        size="large"
-                        color="light-blue-lighten-2"
-                        block
-                        class="rounding text-body-2 text-white third-party-btn"
-                        text="ثبت نام با گیت هاب"
-                      >
-                        <span :class="theme == 'myDark' ? 'text-white' : 'text-black'">
+                      <v-btn flat variant="outlined" size="large" color="light-blue-lighten-2" block
+                        class="rounding text-body-2 text-white third-party-btn" text="ثبت نام با گیت هاب">
+                        <span :class="useCookie('theme').value == 'myLight' ? 'text-black' : 'text-white'">
                           ثبت نام با گیت هاب
                         </span>
                         <template v-slot:prepend>
