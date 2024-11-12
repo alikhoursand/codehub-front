@@ -7,22 +7,26 @@
         <div class="btn-gp">
           <v-slide-group v-model="selectedCategory" mandatory show-arrows max-width="750">
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+              <v-btn size="large" flat height="55"
+                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
                 text="همه سوالات" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+              <v-btn size="large" flat height="55"
+                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
                 text="گفتگو های خصوصی" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+              <v-btn size="large" flat height="55"
+                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
                 text="پرسش های حل شده" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
             <v-slide-group-item v-slot="{ isSelected, toggle }">
-              <v-btn size="large" flat rounded="lg" height="55" :color="isSelected ? '#14161a' : undefined"
+              <v-btn size="large" flat height="55"
+                :color="isSelected ? useCookie('theme').value == 'myDark' ? '#14161a' : '#EDF9FF' : undefined"
                 text="پرسش های بدون پاسخ" class="" :variant="isSelected ? 'flat' : 'text'" @click="toggle">
               </v-btn>
             </v-slide-group-item>
@@ -36,10 +40,10 @@
               <v-btn :ripple="false" v-bind="props" text="مرتب سازی پرسش ها" class=" sorting" size="large"
                 variant="text">
                 <template v-slot:prepend>
-                  <img src="/icons/sort.svg" alt="" />
+                  <img src="/icons/sort-blue.svg" alt="" />
                 </template>
                 <template v-slot:append>
-                  <img src="/icons/arrow-down.svg" alt="" />
+                  <img src="/icons/arrow-down-blue.svg" alt="" />
                 </template>
               </v-btn>
             </template>

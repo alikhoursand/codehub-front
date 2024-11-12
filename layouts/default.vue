@@ -1,21 +1,20 @@
 <template>
-  <v-app :theme="theme.value" style="position: relative">
+  <v-app :theme="theme" style="position: relative">
     <v-navigation-drawer v-model="showSideBar" disable-resize-watcher>
-      <v-list class="pt-0">
+
+      <template v-slot:prepend>
         <nuxt-link to="/auth">
-          <v-list-item class="login-menu">
+          <v-btn block color="light-blue-lighten-2" size="large" rounded="0" text="ورود / ثبت نام" flat>
             <template v-slot:prepend>
               <img src="/public/icons/login-1.svg"></img>
             </template>
-            <div :class="['menu-item']">
-              ورود / ثبت نام
-            </div>
-          </v-list-item>
+          </v-btn>
         </nuxt-link>
+      </template>
+      <v-list class="pt-0">
 
-
-        <NuxtLink to="/" class="mt-10">
-          <v-list-item class="mt-10">
+        <NuxtLink to="/">
+          <v-list-item class="mt-5">
             <template v-slot:prepend>
               <img src="/icons/home-2.svg"></img>
             </template>
@@ -26,7 +25,23 @@
 
 
         </NuxtLink>
+
       </v-list>
+      <template v-slot:append>
+
+        <div class="d-flex justify-center align-center">
+          <v-switch hide-details v-model="themeValue" inset color="light-blue-lighten-2">
+
+            <template v-slot:label>
+              <img :src="theme == 'myDark' ? '/icons/moon-blue.svg' : '/icons/sun-1.svg'" @click="changeTheme()"
+                style="transform: scaleX(-1);" class="ml-2" alt="">
+              <span>{{ theme == 'myDark' ? 'دارک مود' : 'لایت مود' }}</span>
+            </template>
+          </v-switch>
+        </div>
+
+
+      </template>
     </v-navigation-drawer>
 
     <v-app-bar scroll-behavior="elevate" height="120" height-md="20" class="top-menu">
@@ -66,7 +81,7 @@
             <img src="/icons/notification.svg" class="ma-2 ml-2 mr-2 d-block d-lg-none"></img>
 
             <v-btn variant="outlined" color="light-blue-lighten-2" text="اعلان های من"
-              class=" rounding ma-2 d-none d-lg-flex " size="x-large">
+              :class="[theme == 'myLight' ? 'tonal-bg' : '', 'rounding ma-2 d-none d-lg-flex']" size="x-large">
               <template v-slot:prepend>
                 <img src="/icons/notification.svg"></img>
               </template>
@@ -82,11 +97,11 @@
               </template></v-btn>
           </NuxtLink>
 
-          <v-btn size="x-small" color="light-blue-lighten-2" :variant="theme == 'myDark' ? 'flat' : 'tonal'" icon=""
+          <!-- <v-btn size="x-small" color="light-blue-lighten-2" :variant="theme == 'myDark' ? 'flat' : 'tonal'" icon=""
             class="ml-2 mr-2 d-flex d-lg-none" rounded="xl" flat>
             <img :src="theme == 'myDark' ? '/icons/moon.svg' : '/icons/sun-1.svg'" @click="changeTheme()"
               style="transform: scaleX(-1);" alt="">
-          </v-btn>
+          </v-btn> -->
 
           <v-btn size="small" color="light-blue-lighten-2" :variant="theme == 'myDark' ? 'flat' : 'tonal'" icon=""
             class="ml-2 mr-2 d-none d-lg-flex" rounded="xl" flat>
@@ -114,7 +129,7 @@
       </div>
     </v-main>
 
-    <v-footer class="mt-0 pa-5 pa-md-15 foot">
+    <v-footer class="mt-0 pa-5 pa-md-15 foot" theme="myDark">
       <v-row class="ma-0 mx-auto justify-space-between text-center text-lg-right" style="max-width: 1400px">
         <v-col cols="12" md="3">
           <div class="">
@@ -132,14 +147,14 @@
           </div>
         </v-col>
         <v-col cols="12" md="3" class=" mt-10 mt-sm-0">
-          <div class="text-h6 font-weight-normal text-white">ارتباط با ما</div>
+          <div class="text-h6 font-weight-normal ">ارتباط با ما</div>
           <div class=" mt-4 ">تماس با ما</div>
           <div class=" mt-3 ">پیشنهاد و انتقاد</div>
           <div class=" mt-3 ">سوالات متداول</div>
           <div class=" mt-3 ">وبلاگ</div>
         </v-col>
         <v-col cols="12" md="4" class=" mt-10 mt-sm-0">
-          <div class="text-h6 font-weight-normal text-white">عضویت در خبرنامه</div>
+          <div class="text-h6 font-weight-normal ">عضویت در خبرنامه</div>
           <div class=" mt-4 ">از جدیدترین مقالات باخبر شوید.</div>
           <div class="mt-3">
             <v-text-field label="ایمیل خود را وارد کنید" variant="solo-filled" flat density="comfortable" rounded="lg">
@@ -177,6 +192,8 @@ const runtimeConfig = useRuntimeConfig();
 var currentTheme = useCookie('theme').value ? useCookie('theme').value : 'myDark'
 useCookie('theme').value = currentTheme
 
+var thv = currentTheme == 'myDark' ? true : false;
+
 let searchQuery = ref(null);
 let page = ref("")
 let cartCount = ref(0);
@@ -184,8 +201,14 @@ let theme = ref(currentTheme)
 let searchDialog = ref(false)
 let searchLoading = ref(false)
 let showSideBar = ref(false)
+let themeValue = ref(thv)
 
+watch(themeValue, async () => {
+  console.log(themeValue.value);
+  theme.value = themeValue.value ? 'myDark' : 'myLight'
+  useCookie('theme').value = theme.value
 
+});
 
 
 function changeTheme() {

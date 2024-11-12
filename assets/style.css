@@ -176,6 +176,10 @@ body,
     background: #242b37 !important;
 }
 
+.lighter-bg {
+    background: #EDF9FF !important;
+}
+
 
 .profile-avatar {
     border: 12px solid #14161a;
@@ -257,8 +261,22 @@ label {
 }
 
 
+.has-border {
+    border: 1px solid #E0E6F2 !important;
+}
+
+.no-border {
+    border: 1px solid #e0e6f200 !important;
+}
+
+.tonal-bg {
+    background-color: #EDF9FF !important;
+}
+
+.category-card,
+.submit-btn,
 .auth .v-field {
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-md) !important;
 }
 
 
