@@ -22,8 +22,7 @@
               <v-tabs-window class="mt-5" v-model="tab">
                 <v-tabs-window-item value="login">
                   <label for="" class="d-block mt-5">ایمیل</label>
-                  <v-text-field placeholder="Email Address" flat hide-details class="mt-2" dir="ltr"
-                    variant="outlined"></v-text-field>
+                  <v-text-field flat hide-details class="mt-2" dir="ltr" variant="outlined"></v-text-field>
 
                   <label for="" class="d-block mt-5">رمز عبور</label>
                   <v-text-field :type="visible3 ? 'text' : 'password'" placeholder="" dir="ltr" flat hide-details
@@ -91,8 +90,7 @@
 
                 <v-tabs-window-item value="register">
                   <label for="" class="d-block mt-5">ایمیل</label>
-                  <v-text-field placeholder="Email Address" flat hide-details class="rounding mt-2" dir="ltr"
-                    variant="outlined"></v-text-field>
+                  <v-text-field flat hide-details class="rounding mt-2" dir="ltr" variant="outlined"></v-text-field>
 
                   <label for="" class="d-block mt-5">رمز عبور</label>
                   <v-text-field :type="visible ? 'text' : 'password'" placeholder="" flat hide-details dir="ltr"
