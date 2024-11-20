@@ -19,6 +19,22 @@
     opacity: 0;
 }
 
+.slide-fade-enter-active {
+    transition: all 0.2s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+
+
 body,
 .v-btn,
 .v-label,
@@ -245,7 +261,7 @@ label {
 }
 
 .right-border {
-    border-right: 3px solid #ddd;
+    border-right: 3px solid #9E9E9E;
 }
 
 .v-toolbar {
@@ -265,7 +281,7 @@ label {
 }
 
 .rep-ans {
-    height: 22px;
+    height: 21px;
     line-height: 1.6rem;
     text-align: justify;
     overflow: hidden;
@@ -291,10 +307,14 @@ label {
 
 .category-card,
 .submit-btn,
-.auth .v-field {
+.auth .v-field,
+.rounding .v-field {
     border-radius: var(--border-radius-md) !important;
 }
 
+.v-otp-input .v-field {
+    border-radius: 7px !important;
+}
 
 
 .v-input.v-theme--myLight .v-field--variant-outlined .v-field__outline__end {
