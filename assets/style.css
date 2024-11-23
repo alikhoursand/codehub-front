@@ -61,6 +61,9 @@ body,
 }
 
 
+.ans .text-area-field .v-field__input {
+    min-height: 300px;
+}
 
 .ck-table-resized {
     width: 100%;
