@@ -33,8 +33,14 @@ export default defineNuxtConfig({
       })
     },
     //...
-    'nuxt-swiper', '@pinia/nuxt'
+    'nuxt-swiper', '@pinia/nuxt', 'nuxt-tiptap-editor'
   ],
+  tiptap: {
+    lowlight: {
+      theme: 'github-dark',
+    },
+    prefix: 'Tiptap', //prefix for Tiptap imports, composables not included
+  },
   swiper: {
     // Swiper options
     //----------------------

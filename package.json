@@ -15,6 +15,7 @@
     "@pinia/nuxt": "^0.5.4",
     "nuxt": "^3.12.4",
     "nuxt-swiper": "^1.2.2",
+    "nuxt-tiptap-editor": "^2.1.4",
     "pinia": "^2.2.2",
     "vue": "3.4.36",
     "vue-toastification": "^2.0.0-rc.5"

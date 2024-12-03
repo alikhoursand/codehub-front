@@ -30,10 +30,10 @@
       <template v-slot:append>
 
         <div class="d-flex justify-center align-center">
-          <v-switch hide-details v-model="themeValue" inset color="light-blue-lighten-2">
+          <v-switch hide-details v-model="themeValue" @click="changeTheme()" inset color="light-blue-lighten-2">
 
             <template v-slot:label>
-              <img :src="theme == 'myLight' ? '/icons/sun-1.svg' : '/icons/moon-blue.svg'" @click="changeTheme()"
+              <img :src="theme == 'myLight' ? '/icons/sun-1.svg' : '/icons/moon-blue.svg'"
                 style="transform: scaleX(-1);" class="ml-2" alt="">
               <span>{{ theme == 'myLight' ? 'لایت مود' : 'دارک مود' }}</span>
             </template>
@@ -104,9 +104,9 @@
           </v-btn> -->
 
           <v-btn size="small" color="light-blue-lighten-2" :variant="theme == 'myLight' ? 'tonal' : 'flat'" icon=""
-            class="ml-2 mr-2 d-none d-lg-flex" rounded="xl" flat>
-            <img :src="theme == 'myLight' ? '/icons/sun-1.svg' : '/icons/moon.svg'" @click="changeTheme()"
-              style="transform: scaleX(-1);" alt="">
+            @click="changeTheme()" class="ml-2 mr-2 d-none d-lg-flex" rounded="xl" flat>
+            <img :src="theme == 'myLight' ? '/icons/sun-1.svg' : '/icons/moon.svg'" style="transform: scaleX(-1);"
+              alt="">
           </v-btn>
 
 

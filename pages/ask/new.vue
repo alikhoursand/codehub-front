@@ -67,29 +67,30 @@
                         </v-col>
                         <v-col cols="12" class="mt-5">
                             <label for="">متن پاسخ شما</label>
-                            <v-textarea hide-details variant="outlined"
-                                class="rounding text-area-field mt-2"></v-textarea>
-
+                            <TitapEditor />
                         </v-col>
                     </v-row>
 
-                    <v-row class="align-center justify-end mt-4">
+                    <v-row class="align-center justify-end mt-4 px-3">
                         <v-col class="pa-0 text-lg-left text-right" cols="12" lg="2">
-                            <v-btn variant="text" flat rounded="lg" text="قرار دادن کد">
+                            <v-btn variant="text" flat text="قرار دادن کد"
+                                :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'rounding']">
                                 <template v-slot:prepend>
                                     <img src="/public/icons/document-code.svg" alt="">
                                 </template>
                             </v-btn>
                         </v-col>
                         <v-col class="pa-0 text-lg-left text-right" cols="12" lg="2">
-                            <v-btn variant="text" flat rounded="lg" text="آپلود تصویر">
+                            <v-btn variant="text" flat text="آپلود تصویر"
+                                :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'rounding']">
                                 <template v-slot:prepend>
                                     <img src="/public/icons/gallery-add.svg" alt="">
                                 </template>
                             </v-btn>
                         </v-col>
                         <v-col class="pa-0 text-lg-left text-right" cols="12" lg="2">
-                            <v-btn variant="text" flat rounded="lg" text="افزودن لینک">
+                            <v-btn variant="text" flat text="افزودن لینک"
+                                :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'rounding']">
                                 <template v-slot:prepend>
                                     <img src="/public/icons/link-square-blue.svg" alt="">
                                 </template>
@@ -109,5 +110,7 @@
     </div>
 </template>
 
+
 <script setup>
+import TitapEditor from '~/components/TitapEditor.vue';
 </script>
