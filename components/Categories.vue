@@ -22,11 +22,11 @@
     </v-row>
 
     <v-row class="ma-0 mt-2">
-      <v-col cols="12" lg="3" md="4" sm="6" v-for="q in 11" :key="q">
-        <v-card href="/category/asd" variant="flat"
+      <v-col cols="12" lg="3" md="4" sm="6" v-for="category in categories" :key="category.id">
+        <v-card :href="`/category/${category.slug}`" variant="flat"
           :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'pa-5 py-10 category-card']">
           <div class="d-flex justify-center align-center">
-            <span class="">موضوع</span>
+            <span class="">{{ category.name }}</span>
             <img src="/images/css-logo.svg" class="mr-2" alt="">
           </div>
           <v-divider color="light-blue-lighten-2" class="my-3 mx-auto border-opacity-100" width="80"></v-divider>
@@ -41,5 +41,10 @@
 
 <script setup>
 
-
+defineProps({
+  categories: {
+    type: Array,
+    required: true,
+  },
+})
 </script>

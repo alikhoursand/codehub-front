@@ -2,7 +2,7 @@
   <div class="">
     <Hero class="mt-5" :sliders="[]" :banners="[]" />
     <AskAndAnswer class="mt-5" :showTitle="true" />
-    <Categories class="mt-5" />
+    <Categories :categories="categories" class="mt-5" />
     <RecentQuestions class="mt-8" />
     <TopUsers class="mt-5" />
   </div>
@@ -30,9 +30,9 @@ useHead({
 // const { data: mostSoldProducts } = await useFetch(
 //   `${runtimeConfig.public.apiUrl}/shop/product/most-sold`
 // );
-// const { data: categories } = await useFetch(
-//   `${runtimeConfig.public.apiUrl}/shop/category/first-page`
-// );
+const { data: categories } = await useFetch(
+  `http://backend.code-hub.site/api/categories`
+);
 // const { data: banners } = await useFetch(`${runtimeConfig.public.apiUrl}/banners`);
 
 let pageLoading = ref(true);

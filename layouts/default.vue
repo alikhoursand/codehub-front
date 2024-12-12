@@ -87,7 +87,15 @@
               </template>
             </v-btn>
           </NuxtLink>
-          <NuxtLink to="/" class="d-inline-block">
+
+          <NuxtLink v-if="useCookie('token').value" to="/profile" class="d-inline-block">
+            <!-- <v-icon icon="mdi-account" class="ma-2 ml-3 d-block d-md-none"></v-icon> -->
+            <!-- <img src="/icons/login-2.svg" class="ma-2 ml-2 d-block d-lg-none"></img> -->
+            <v-btn variant="flat" color="light-blue-lighten-2" text="حساب کاربری"
+              class=" rounding  mr-0 ma-2 d-none d-lg-flex " size="x-large">
+            </v-btn>
+          </NuxtLink>
+          <NuxtLink v-else to="/auth" class="d-inline-block">
             <!-- <v-icon icon="mdi-account" class="ma-2 ml-3 d-block d-md-none"></v-icon> -->
             <!-- <img src="/icons/login-2.svg" class="ma-2 ml-2 d-block d-lg-none"></img> -->
             <v-btn variant="flat" color="light-blue-lighten-2" text="ورود / ثبت نام"
@@ -96,7 +104,6 @@
                 <img src="/icons/login-1.svg"></img>
               </template></v-btn>
           </NuxtLink>
-
           <!-- <v-btn size="x-small" color="light-blue-lighten-2" :variant="theme == 'myDark' ? 'flat' : 'tonal'" icon=""
             class="ml-2 mr-2 d-flex d-lg-none" rounded="xl" flat>
             <img :src="theme == 'myDark' ? '/icons/moon.svg' : '/icons/sun-1.svg'" @click="changeTheme()"

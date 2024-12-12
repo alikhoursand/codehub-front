@@ -40,7 +40,7 @@
                 <div class="dot"></div>
               </template>
             </v-list-item>
-            <v-list-item>
+            <v-list-item @click="logout()">
               <template v-slot:prepend>
                 <img src="/icons/logout.svg" width="27" height="27" alt="">
               </template>
@@ -148,7 +148,9 @@
 import editProfile from '~/components/profile/editProfile.vue';
 import profileInfo from '~/components/profile/profileInfo.vue';
 import editPassword from '~/components/profile/editPassword.vue';
+import { useToast } from "vue-toastification";
 
+const toast = useToast();
 const Route = useRoute()
 
 let menuSheet = ref(false)
@@ -168,6 +170,7 @@ if (Route.query.page == 'edit') {
 } else {
   main.value = true
 }
+
 
 function changePassFunc() {
 
@@ -204,6 +207,15 @@ function showEditProfile() {
     left: 0,
     behavior: "smooth",
   });
+}
+
+function logout() {
+  localStorage.removeItem("token");
+  useCookie("token").value = undefined;
+
+  toast.success("خارج شدید");
+
+  navigateTo("/");
 }
 
 </script>

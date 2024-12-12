@@ -169,6 +169,32 @@ body,
     border-radius: 1rem !important;
 }
 
+.v-input.v-theme--myLight .v-field--variant-outlined.v-field--error .v-field__outline__end {
+    border-top-width: 1px;
+    border-top-color: #FF1744 !important;
+    border-bottom-width: 1px;
+    border-bottom-color: #FF1744 !important;
+    border-inline-end-width: 1px;
+    border-inline-end-color: #FF1744 !important;
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+
+.v-input.v-theme--myLight .v-field--variant-outlined.v-field--error .v-field__outline__start {
+    border-top-width: 1px;
+    border-top-color: #FF1744 !important;
+    border-bottom-width: 1px;
+    border-bottom-color: #FF1744 !important;
+    border-inline-start-width: 1px;
+    border-inline-start-color: #FF1744 !important;
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+
+.v-input__details .v-messages__message {
+    color: #FF1744 !important;
+}
+
 .profile-container {
     border-bottom-left-radius: var(--border-radius-md) !important;
     border-bottom-right-radius: var(--border-radius-md) !important;
