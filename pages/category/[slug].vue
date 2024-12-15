@@ -55,21 +55,25 @@
               </v-list>
             </v-menu>
 
-            <v-btn size="x-large" flat color="light-blue-lighten-2 mr-2" class=" rounding" text="ثبت پرسش">
-              <template v-slot:append>
-                <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
-              </template>
-            </v-btn>
+            <nuxt-link to="/ask/new">
+              <v-btn size="x-large" flat color="light-blue-lighten-2 mr-2" class=" rounding" text="ثبت پرسش">
+                <template v-slot:append>
+                  <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+                </template>
+              </v-btn>
+            </nuxt-link>
 
           </div>
 
           <div class="d-block d-md-none">
 
-            <v-btn block size="x-large" flat color="light-blue-lighten-2" class=" rounding" text="ثبت پرسش">
-              <template v-slot:append>
-                <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
-              </template>
-            </v-btn>
+            <nuxt-link to="/ask/new">
+              <v-btn block size="x-large" flat color="light-blue-lighten-2" class=" rounding" text="ثبت پرسش">
+                <template v-slot:append>
+                  <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+                </template>
+              </v-btn>
+            </nuxt-link>
 
 
             <v-menu location="bottom" transition="slide-y-transition">
@@ -123,11 +127,13 @@
       <v-row class="ma-0 mt-5">
         <v-col cols="12" lg="3" class="d-none d-lg-block">
           <v-sheet :class="[useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border', 'px-4 py-6 sidebar']">
-            <v-btn block flat size="x-large" color="light-blue-lighten-2 categories-btn" class="" text="ثبت پرسش">
-              <template v-slot:append>
-                <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
-              </template>
-            </v-btn>
+            <nuxt-link to="/ask/new">
+              <v-btn block flat size="x-large" color="light-blue-lighten-2 categories-btn" class="" text="ثبت پرسش">
+                <template v-slot:append>
+                  <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+                </template>
+              </v-btn>
+            </nuxt-link>
             <div class="mt-8">
               <span class="text-high-emphasis" style="font-size: 18px;">دسته بندی پرسش ها</span>
             </div>

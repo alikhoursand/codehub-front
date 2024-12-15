@@ -86,12 +86,41 @@
 </template>
 
 <script setup>
-const editor = useEditor({
-    content: "",
-    extensions: [TiptapStarterKit],
+const props = defineProps({
+    modelValue: {
+        type: String,
+        default: '',
+    },
 });
+
+const editor = useEditor({
+    content: props.modelValue,
+    extensions: [TiptapStarterKit],
+    onUpdate({ editor }) {
+        const html = editor.getHTML();
+        emit('update:modelValue', html);
+    },
+});
+
+// watch(
+//     () => props.modelValue,
+//     (newValue) => {
+//         if (editor && newValue !== editor.getHTML()) {
+//             editor.setContent(newValue);
+//         }
+//     }
+// );
+
+
+
 onMounted(() => {
 });
+// Watch for changes in the modelValue prop
+
+
+const emit = defineEmits(['update:modelValue']);
+
+
 onBeforeUnmount(() => {
     unref(editor).destroy();
 });

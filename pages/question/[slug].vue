@@ -145,11 +145,13 @@
             useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border',
             'px-4 py-6 sidebar',
           ]">
-            <v-btn block size="x-large" flat color="light-blue-lighten-2 categories-btn" class="" text="ثبت پرسش">
-              <template v-slot:append>
-                <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
-              </template>
-            </v-btn>
+            <nuxt-link to="/ask/new">
+              <v-btn block size="x-large" flat color="light-blue-lighten-2 categories-btn" class="" text="ثبت پرسش">
+                <template v-slot:append>
+                  <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+                </template>
+              </v-btn>
+            </nuxt-link>
             <div class="mt-8">
               <span class="text-high-emphasis" style="font-size: 18px">دسته بندی پرسش ها</span>
             </div>

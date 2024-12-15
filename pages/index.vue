@@ -21,8 +21,8 @@ useHead({
   title: "کد هاب",
 });
 
-// const { data: newestProducts } = await useFetch(
-//   `${runtimeConfig.public.apiUrl}/shop/product/newest`
+// const { data: userInfo } = await useFetch(
+//   `${runtimeConfig.public.apiUrl}/`
 // );
 // const { data: specialProducts } = await useFetch(
 //   `${runtimeConfig.public.apiUrl}/shop/product/special`
@@ -30,10 +30,13 @@ useHead({
 // const { data: mostSoldProducts } = await useFetch(
 //   `${runtimeConfig.public.apiUrl}/shop/product/most-sold`
 // );
-const { data: categories } = await useFetch(
-  `http://backend.code-hub.site/api/categories`
-);
+
 // const { data: banners } = await useFetch(`${runtimeConfig.public.apiUrl}/banners`);
+
+const { data: categories } = await useFetch(
+  `${runtimeConfig.public.apiUrl}/categories`
+);
+
 
 let pageLoading = ref(true);
 

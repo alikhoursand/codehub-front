@@ -12,11 +12,13 @@
       </v-col>
       <v-col cols="12" md="6">
         <div class="text-left">
-          <v-btn size="x-large" flat color="light-blue-lighten-2" class="rounding submit-btn" text="ثبت پرسش">
-            <template v-slot:append>
-              <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
-            </template>
-          </v-btn>
+          <nuxt-link to="/ask/new">
+            <v-btn size="x-large" flat color="light-blue-lighten-2" class="rounding submit-btn" text="ثبت پرسش">
+              <template v-slot:append>
+                <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+              </template>
+            </v-btn>
+          </nuxt-link>
         </div>
       </v-col>
     </v-row>

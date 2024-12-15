@@ -267,6 +267,7 @@ definePageMeta({
 
 
 const toast = useToast();
+const runtimeConfig = useRuntimeConfig();
 
 
 
@@ -317,7 +318,7 @@ let errors = ref({
 function login() {
   loginLoading.value = true;
 
-  $fetch('https://backend.code-hub.site/api/login', {
+  $fetch(`${runtimeConfig.public.apiUrl}/login`, {
     method: "POST",
     body: {
       name: loginUser.value.fullName,

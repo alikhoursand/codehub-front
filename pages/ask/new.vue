@@ -6,12 +6,14 @@
                     useCookie('theme').value == 'myLight' ? 'has-border' : 'no-border',
                     'px-4 py-6 sidebar',
                 ]">
-                    <v-btn block size="x-large" flat color="light-blue-lighten-2 categories-btn" class=""
-                        text="ثبت پرسش">
-                        <template v-slot:append>
-                            <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
-                        </template>
-                    </v-btn>
+                    <nuxt-link to="/ask/new">
+                        <v-btn block size="x-large" flat color="light-blue-lighten-2 categories-btn" class=""
+                            text="ثبت پرسش">
+                            <template v-slot:append>
+                                <img src="/public/icons/add-square.svg" width="20" height="20" alt="" />
+                            </template>
+                        </v-btn>
+                    </nuxt-link>
                     <div class="mt-8">
                         <span class="text-high-emphasis" style="font-size: 18px">دسته بندی پرسش ها</span>
                     </div>
@@ -57,17 +59,17 @@
                     <v-row>
                         <v-col cols="12" md="6">
                             <label for="">عنوان پرسش</label>
-                            <v-text-field flat hide-details class="rounding mt-2" variant="outlined"></v-text-field>
+                            <v-text-field flat hide-details class="rounding mt-2" v-model="question.title"
+                                spellcheck="false" variant="outlined"></v-text-field>
                         </v-col>
                         <v-col cols="12" md="6">
                             <label for="">دسته بندی پرسش</label>
-                            <v-select flat class="rounding mt-2" placeholder="دسته بندی"
-                                :items="['دسته بندی یک', 'دسته بندی دو', 'دسته بندی سه', 'دسته بندی چهار']"
-                                variant="outlined"></v-select>
+                            <v-select flat class="rounding mt-2" placeholder="دسته بندی" v-model="question.category"
+                                :items="categories" item-title="name" item-value="id" variant="outlined"></v-select>
                         </v-col>
                         <v-col cols="12" class="mt-5">
                             <label for="">متن پاسخ شما</label>
-                            <TitapEditor />
+                            <TitapEditor v-model="question.body" />
                         </v-col>
                     </v-row>
 
@@ -98,10 +100,9 @@
                         </v-col>
                     </v-row>
 
-
                     <div class="text-left mt-10">
-                        <v-btn variant="flat" size="x-large" text="ثبت پرسش" color="light-blue-lighten-2" flat
-                            class="rounding">
+                        <v-btn @click=submitQuestion() variant="flat" size="x-large" text="ثبت پرسش"
+                            :loading="submittingQuestion" color="light-blue-lighten-2" flat class="rounding">
                         </v-btn>
                     </div>
                 </v-sheet>
@@ -113,4 +114,52 @@
 
 <script setup>
 import TitapEditor from '~/components/TitapEditor.vue';
+const runtimeConfig = useRuntimeConfig();
+
+definePageMeta({
+    middleware: "auth",
+});
+
+
+let submittingQuestion = ref(false)
+let question = ref({
+    title: null,
+    body: null,
+    category: null,
+})
+
+const { data: categories } = await useFetch(
+    `${runtimeConfig.public.apiUrl}/categories`
+);
+// console.log(categories);
+
+
+function submitQuestion() {
+
+
+    console.log(question.value);
+
+
+
+    if (submittingQuestion.value == true) return;
+    submittingQuestion.value = true;
+
+    $fetch(`${runtimeConfig.public.apiUrl}/categories`, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Basic ${useCookie('token')}`
+        },
+        data: {
+            title: question.value.title,
+            body: question.value.body,
+            category: question.value.category,
+        }
+    }).then((response) => {
+        console.log(response);
+        submittingQuestion.value = false;
+    }).catch((error) => {
+        console.log(error.response)
+        submittingQuestion.value = false;
+    });
+}
 </script>

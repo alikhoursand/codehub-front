@@ -7,8 +7,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   runtimeConfig: {
     public: {
-      apiUrl: 'http://localhost/',
-      backendUrl: 'http://localhost/',
+      apiUrl: 'https://backend.code-hub.site/api',
+      backendUrl: 'https://backend.code-hub.site/',
     }
 
   },
